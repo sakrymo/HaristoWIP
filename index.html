@@ -60,8 +60,10 @@
             </div>
           </div>
           <div class="bottommiddle">
-            <span id="scrollindicator_text">LEARN MORE</span>
-            <img src="img/scrollindicator.svg" alt="" id="scrollindicator">
+            <a href="#section_A"><div class="scrollindicator_container">
+              <span id="scrollindicator_text">LEARN MORE</span>
+              <img src="img/scrollindicator.svg" alt="" id="scrollindicator">
+            </div></a>
           </div>
           <div class="bottomleft"></div>
         </div>
@@ -71,14 +73,41 @@
 
   </section>
   
-  <div class="section_A">
+  <div id="section_A">
     <h1>We Are Global Section </h1>     
   </div>
   <iframe width="1920" height="1080" src="https://www.youtube.com/embed/hxBQxTgOVBE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen autoplay="1" mute="1"></iframe>
 
-  <script>
+  <script> //Preloader
     $(window).on("load",function(){
       $(".preloader_wrapper").fadeOut("Slow");
+    });
+  </script>
+
+  <script> //Smooth scrolling
+  $(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
+  
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+  
+        // Store hash
+        var hash = this.hash;
+  
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+  
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+        } // End if
+      });
     });
   </script>
   </body>

@@ -44,7 +44,7 @@ body {
   z-index: 1;
   width: 100%;
   height: 100%;
-  background-color: rgba(60, 255, 0, 0.411);
+  background-color: transparent;
   margin-top: -100vh;
   display: flex;
   justify-content: center;
@@ -55,7 +55,7 @@ body {
 .hero_layout_container {
   position: relative;
   z-index: 2;
-  background-color: rgba(4, 0, 255, 0.452);
+  background-color: transparent;
   height: auto;
   width: auto;
   display: grid;
@@ -108,7 +108,7 @@ body {
                     "leftspace bottomleft bottommiddle bottomright rightspace";
   width: 100%;
   height: 100%;
-  background-color: rgba(47, 0, 255, 0.39);
+  background-color: transparent;
   position: absolute;
   z-index: 5
 }
@@ -203,7 +203,7 @@ body {
   text-rendering: optimizeLegibility;
   margin-top: 110px;
   opacity: 0;
-  animation: 2s 2s forwards scrollindicator-opacity;
+  animation: 2s 3s forwards scrollindicator-opacity;
 }
 
 @keyframes menu-in {
@@ -257,4 +257,4 @@ body {
 @keyframes socialmediaicons {
   0% {opacity: 0; transform: translateX(20px);}
   100% {opacity: 1; transform: translateX(0);}
-}
+} 

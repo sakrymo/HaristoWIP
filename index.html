@@ -7,15 +7,27 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://kit.fontawesome.com/193a5783af.js" crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/lbb4epi.css">
 </head>
 
 <body>
+  
+  <div class="preloader_wrapper">
+    <div class="preloader">
+      <img src="img/H_Symbol.svg" alt="" id="preloader_H">
+      <img src="img/preloader.gif" alt="" id="preloader_circles">
+    </div>
+  </div>
+  
   <section class="hero_section">
     
     <div class="wrapper_hero_animation">
-      <video src="https://t759609.p.clickup-attachments.com/t759609/7e00bdfb-375a-4053-b0f8-52ac58a8420e/HaristoHeroBG.mp4?view=open" class="hero_animation" autoplay="1" loop="1"></video>
+      <video src="https://t759609.p.clickup-attachments.com/t759609/7e00bdfb-375a-4053-b0f8-52ac58a8420e/HaristoHeroBG.mp4?view=open" class="hero_animation" mute="1" autoplay="1" loop="1"></video>
     </div>
 
     <div class="hero_layout_wrapper">
@@ -64,4 +76,10 @@
   </div>
   <iframe width="1920" height="1080" src="https://www.youtube.com/embed/hxBQxTgOVBE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen autoplay="1" mute="1"></iframe>
 
+  <script>
+    $(window).on("load",function(){
+      $(".preloader_wrapper").fadeOut("Slow");
+    });
+  </script>
+  </body>
 </html>

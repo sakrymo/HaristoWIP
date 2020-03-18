@@ -12,6 +12,34 @@ body {
   box-sizing: border-box;
 }
 
+.preloader_wrapper {
+  background: #bc2b2e;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top:0 ;
+  right: 0;
+  z-index: 999;
+}
+
+.preloader {
+  display: flex;
+  flex-flow: column;
+}
+
+#preloader_H {
+  height: 100px;
+}
+
+#preloader_circles {
+  height: 100px;
+  margin-top: 20px;
+}
+
+
 .hero_section {
   background-color: white;
   width: 100vw;

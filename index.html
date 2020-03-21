@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,33 +8,35 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://kit.fontawesome.com/193a5783af.js" crossorigin="anonymous"></script>
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/lbb4epi.css">
 </head>
 
 <body>
-  
+
   <div class="preloader_wrapper">
     <div class="preloader">
       <img src="img/H_Symbol.svg" alt="" id="preloader_H">
       <img src="img/preloader.gif" alt="" id="preloader_circles">
     </div>
   </div>
-  
+
   <section class="hero_section">
-    
+
     <div class="wrapper_hero_animation">
-      <video src="https://t759609.p.clickup-attachments.com/t759609/7e00bdfb-375a-4053-b0f8-52ac58a8420e/HaristoHeroBG.mp4?view=open" class="hero_animation" mute="1" autoplay="1" loop="1"></video>
+      <video
+        src="https://t759609.p.clickup-attachments.com/t759609/7e00bdfb-375a-4053-b0f8-52ac58a8420e/HaristoHeroBG.mp4?view=open"
+        id="hero_animation" mute="1" loop="1"></video>
     </div>
 
     <div class="hero_layout_wrapper">
-      
+
       <div class="hero_layout_container">
-        <img src="https://t759609.p.clickup-attachments.com/t759609/86e61a2a-4658-40af-959f-3d9dc52633a4/placeholderForLayout.png?view=open" alt="" id="hero_layout_container_dimensions">
+        <img
+          src="https://t759609.p.clickup-attachments.com/t759609/86e61a2a-4658-40af-959f-3d9dc52633a4/placeholderForLayout.png?view=open"
+          alt="" id="hero_layout_container_dimensions">
 
         <div class="hero_layout_grid">
           <div class="leftspace"></div>
@@ -44,6 +47,12 @@
               <div class="hamburger_top hamburger_line"></div>
               <div class="hamburger_mid hamburger_line"></div>
               <div class="hamburger_bot hamburger_line"></div>
+              <!-- <nav class="openmenu">
+                <li>Lorem ipsum</li>
+                <li>Lorem ipsum</li>
+                <li>Lorem ipsum</li>
+                <li>Lorem ipsum</li>
+              </nav> -->
             </div>
           </div>
           <div class="topmiddle"></div>
@@ -60,53 +69,64 @@
             </div>
           </div>
           <div class="bottommiddle">
-            <a href="#section_A"><div class="scrollindicator_container">
-              <span id="scrollindicator_text">LEARN MORE</span>
-              <img src="img/scrollindicator.svg" alt="" id="scrollindicator">
-            </div></a>
+            <a href="#section_A">
+              <div class="scrollindicator_container">
+                <span id="scrollindicator_text">LEARN MORE</span>
+                <img src="img/scrollindicator.svg" alt="" id="scrollindicator">
+              </div>
+            </a>
           </div>
           <div class="bottomleft"></div>
         </div>
       </div>
-    
+
     </div>
 
   </section>
-  
-  <div id="section_A">
-    <h1>We Are Global Section </h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores enim, odit nam laudantium incidunt eos reiciendis, quae atque est dolores pariatur quasi qui tenetur inventore ad consequuntur? Esse neque quidem minus quaerat molestiae, quas amet cum dolores vitae obcaecati veritatis?</p>
-    <video src="https://t759609.p.clickup-attachments.com/t759609/50cbca91-729b-4939-992a-e6fe18c408d1/GlobePreview.mp4?view=open" autoplay="1" loop="1" data-aos="zoom-in" data-aos-duration="3000" id="globeanimation"></video>
-  </div>
 
-  <script> //Preloader
-    $(window).on("load",function(){
+  <section id="section_0"></section>
+  <section id="section_A" data-aos="fade" data-aos-duration="1000" data-aos-offset="800" data-aos-id="lorem">
+    <h1>We Are Global Section </h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores enim, odit nam laudantium incidunt eos
+      reiciendis, quae atque est dolores pariatur quasi qui tenetur inventore ad consequuntur? Esse neque quidem minus
+      quaerat molestiae, quas amet cum dolores vitae obcaecati veritatis?</p>
+    <video
+      src="https://t759609.p.clickup-attachments.com/t759609/50cbca91-729b-4939-992a-e6fe18c408d1/GlobePreview.mp4?view=open"
+      autoplay="1" loop="1" data-aos="zoom-in" data-aos-delay="1500" data-aos-duration="3000"
+      id="globeanimation"></video>
+  </section>
+  <div class="example"></div>
+  <script>
+    //Preloader
+    $(window).on("load", function () {
       $(".preloader_wrapper").fadeOut("Slow");
+      $('#hero_animation').trigger('play');
     });
   </script>
 
-  <script> //Smooth scrolling
-  $(document).ready(function(){
-    // Add smooth scrolling to all links
-    $("a").on('click', function(event) {
-  
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-  
-        // Store hash
-        var hash = this.hash;
-  
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-  
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
-        });
+  <script>
+    //Smooth scrolling
+    $(document).ready(function () {
+      // Add smooth scrolling to all links
+      $("a").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
         } // End if
       });
     });
@@ -115,5 +135,20 @@
   <script>
     AOS.init();
   </script>
-  </body>
+
+</body>
+
 </html>
+
+<!--
+  To Do
+  - Move the hamburger menu to the right
+  - Add a floating menu somehow
+  - Move social media to left
+  - Get font for body text
+  - Create fullscreen menu
+  - Add the wave animation thing between sections
+  - Create the globe and make it editable somehow I dont know how
+  - Label all countries
+  - Figure out how to use fullscreen.JS and maybe plan sections for fullscreen size
+-->

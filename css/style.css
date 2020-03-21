@@ -7,6 +7,8 @@ body {
   padding: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
 a {
@@ -44,7 +46,6 @@ a {
   margin-top: 20px;
 }
 
-
 .hero_section {
   background-color: white;
   width: 100vw;
@@ -62,17 +63,35 @@ a {
   width: 100%;
 }
 
-.hero_animation {
+#hero_animation {
   max-height: 100%;
 }
 
+#section_0 {
+  height: 100vh;
+  width: 100vw;
+  background: transparent;
+  position: relative;
+  pointer-events: none !important;
+}
+
 #section_A {
-  position: absolute;
+  position: relative;
   width: 100vw;
   height: 100vh;
-  margin-top: 100vh;
   background-color: white;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.336);
+}
+
+.example {
+  position: fixed;
+    width: 500px;
+    height: 500px;
+    bottom: 0;
+    background: green;
+}
+#section_A.aos-animate + .example {
+  background: red;
 }
 
 .hero_layout_wrapper {
@@ -171,6 +190,12 @@ a {
   transform-origin: 0% 50%;
   transition: transform;
   animation: 1s ease 1.5s both menu-in;
+  transition: opacity 0.5s ease;
+  opacity: 0.8;
+}
+
+.hamburgermenu:hover {
+  opacity: 1;
 }
 
 #hamburgermenu_control {
@@ -225,6 +250,11 @@ a {
   transform: rotate(-45deg);
 } 
 
+.hamburgermenu > input:checked ~ .openmenu {
+  opacity: 1;
+  pointer-events: all;
+}
+
 #scrollindicator {
   height: 64px;
   margin-top: 24px;
@@ -239,7 +269,12 @@ a {
   text-rendering: optimizeLegibility;
   margin-top: 110px;
   opacity: 0;
-  animation: 2s 3s forwards scrollindicator-opacity;
+  animation: 2s 3.2s forwards scrollindicator-opacity;
+  transition: color 0.3s ease-out;
+}
+
+.scrollindicator_container:hover > #scrollindicator_text {
+  color: #bc2b2e;
 }
 
 @keyframes menu-in {
@@ -274,18 +309,19 @@ a {
 }
 
 .social_icon {
-  color: white;
+  color: rgba(255, 255, 255, 0.801);
   font-size:2.4rem;
   margin-right: 80px;
   margin-bottom: 16px;
   animation: 1s 2s ease-out both socialmediaicons ;
-  transition: text-shadow 0.3s ease-out;
+  transition: color 0.15s ease;
   cursor: pointer;
 }
 
 .social_icon:hover {
-  text-shadow: 1px 2px 15px white;
+  color: white;
 }
+
 .socialmediaicons {
   display: flex;
   flex-flow: column;
@@ -301,4 +337,37 @@ a {
 
 #globeanimation {
   height: 480px;
+}
+
+.openmenu {
+  background: #bc2b2e;
+  width: 100vh;
+  height: 100vw;
+  color: white;
+  position: fixed;
+  z-index: 9;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.openmenu li {
+  text-align: center;
+  list-style: none;
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+}
+
+.circle {
+	position: absolute;
+  border: solid 1px #2bbcb5;
+	width: 60px; 
+	height: 60px; 
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+  mix-blend-mode: difference;
 }

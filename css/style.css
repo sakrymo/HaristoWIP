@@ -19,6 +19,10 @@ a {
   box-sizing: border-box;
 }
 
+h1,h2,h3,h4,p {
+  margin: 0;
+}
+
 .preloader_wrapper {
   background: #bc2b2e;
   height: 100%;
@@ -482,6 +486,7 @@ a {
   transform: translateY(100vh);
   transition: transform 1.2s ease, opacity 1s ease;
   box-shadow: 0px 0px 25px 10px rgba(0,0,0,0.15);
+  margin-top: 96px;
 }
 
 #section-A.visible-section {
@@ -521,26 +526,37 @@ a {
 }
 
 .section-A-l-col {
-  background: #f4f4f4;
-  width: 60%;
+  background: white;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-flow: column;
 }
+
 .section-A-r-col {
   background: white;
-  width: 40%;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-flow: column;
-  align-content: flex-end;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 #map-animation {
-  margin-top: auto;
   transition: transform 1s 0.1s ease;
   transform: scale(0);
   transform-origin: center;
+  width: 100%;
+  height: auto;
+  margin-bottom: 40px;
+}
+
+.globe-arrow {
+  width: auto;
+  height: auto;
+  max-height: 180px;
+  margin-bottom: 95px;
 }
 
 #section-A.visible-section .section-A-cols .section-A-r-col #map-animation {
@@ -548,7 +564,7 @@ a {
 }
 
 .navbar-container {
-  max-width: 1200px;
+  max-width: 1400px;
   height: 100%;
   width: 100%;
   margin: auto;
@@ -559,12 +575,13 @@ a {
 
 #navbar-logo {
   height: 70%;
+  padding-left : 15px;
 }
 
 .hamburgermenu.red {
   top: 0%;
   left: 0%;
-
+  transform: scale(0.5);
 }
 .hamburgermenu.red > * {
   background: #bc2b2e;
@@ -573,4 +590,55 @@ a {
 
 .navline {
   transform-origin: right !important;
+}
+
+.logo-corner {
+  width: 256px;
+  height: 256px;
+  position: absolute;
+  opacity: 0.15;
+}
+
+.logo-corner-left {
+  bottom:96px;
+  left:0;
+}
+
+.logo-corner-right {
+  top:0;
+  right:0;
+  transform: rotate(180deg);
+}
+
+.textbox {
+  width: 600px;
+  margin-left: auto;
+}
+
+.overline {
+  font-family: 'Brandon Grotesque', sans-serif;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 15vh;
+  margin-bottom: 0.5rem;
+  color: #bc2b2e;
+  font-weight: 900;
+}
+
+.section-heading {
+  font-family: 'Brandon Grotesque', sans-serif;
+  font-weight: 900;
+  font-size: 6rem;
+  letter-spacing: 0.02rem;
+  margin-bottom: 2rem;
+  color: #bc2b2e;
+}
+
+.copy {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.6187rem;
+  line-height: 1.6em;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
 }

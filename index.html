@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -6,16 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Haristo | Work In Progress</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://kit.fontawesome.com/193a5783af.js" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/lbb4epi.css">
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 </head>
 
-<body>
+<body onload="pageLoaded()">
 
   <div class="preloader_wrapper">
     <div class="preloader">
@@ -29,7 +26,7 @@
     <div class="wrapper_hero_animation">
       <video
         src="https://t759609.p.clickup-attachments.com/t759609/7e00bdfb-375a-4053-b0f8-52ac58a8420e/HaristoHeroBG.mp4?view=open"
-        id="hero_animation" mute="1" loop="1"></video>
+        id="hero_animation" autoplay="0" mute="1" loop="1"></video>
     </div>
 
     <div class="hero_layout_wrapper">
@@ -48,12 +45,6 @@
               <div class="hamburger_top hamburger_line"></div>
               <div class="hamburger_mid hamburger_line"></div>
               <div class="hamburger_bot hamburger_line"></div>
-              <!-- <nav class="openmenu">
-                <li>Lorem ipsum</li>
-                <li>Lorem ipsum</li>
-                <li>Lorem ipsum</li>
-                <li>Lorem ipsum</li>
-              </nav> -->
             </div>
           </div>
           <div class="topmiddle"></div>
@@ -80,77 +71,40 @@
           <div class="bottomleft"></div>
         </div>
       </div>
-
     </div>
-
   </section>
 
-  <!-- <section id="section_0"></section> -->
-  <div class="offset"></div>
-  <div id="triggerSectionA" data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="top-top"></div>
-  </section>
-  <div class="offset" id="WeAreGlobal"></div>
-  <div class="offset"></div>
-  <div class="offset"></div>
-  <div class="offset"></div>
-  <div class="offset"></div>
-  <div class="offset"></div>
-  <div class="offset"></div>
-  <div class="offset"></div>
-  <div class="offset"></div>
-  <div class="offset"></div>
-  <section id="sectionA"></section>
-  <nav id="menuTwo">
-    <img src="img/menupreview.png" alt="">
+  <nav id="fs-menu">
+    <li class="fs-menu-item">Lorem ipsum</li>
+    <li class="fs-menu-item">Lorem ipsum</li>
+    <li class="fs-menu-item">Lorem ipsum</li>
+    <li class="fs-menu-item">Lorem ipsum</li>
   </nav>
-  <div id="triggerSectionB" data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="top-center"></div>
-  <div class="offset"></div>
-  <div class="offset"></div>
-  <div class="offset"></div>
-  <div class="offset"></div>
-  <div class="offset"></div>
-  <div class="offset"></div>
-  <section id="sectionB"></section>
-  <script>
-    //Preloader
-    $(window).on("load", function () {
-      $(".preloader_wrapper").fadeOut("Slow");
-      $('#hero_animation').trigger('play');
-    });
-  </script>
 
-  <script>
-    //Smooth scrolling
-    $(document).ready(function () {
-      // Add smooth scrolling to all links
-      $("a").on('click', function (event) {
+  <div class="whitespace"></div>
 
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-          // Prevent default anchor click behavior
-          event.preventDefault();
+  <nav id="navbar">
+    <div class="navbar-container">
+      <img id="navbar-logo" src="img/LogoTextNew.svg" alt="">
+      <div class="hamburgermenu red">
+        <input type="checkbox" name="" id="hamburgermenu_control">
+        <div class="hamburger_top hamburger_line"></div>
+        <div class="hamburger_mid hamburger_line navline"></div>
+        <div class="hamburger_bot hamburger_line"></div>
+      </div>
+    </div>
+  </nav>
+  <section id="section-A">
+      <div class="section-A-cols">
+        <div class="section-A-l-col"></div>
+        <div class="section-A-r-col">
+          <video id="map-animation" src="video/AnimatedMap.mp4" autoplay="0"></video>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          // Store hash
-          var hash = this.hash;
-
-          // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 800, function () {
-
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
-          });
-        } // End if
-      });
-    });
-  </script>
-
-  <script>
-    AOS.init();
-  </script>
-
+  <script src="js/main.js"></script>
 </body>
 
 </html>

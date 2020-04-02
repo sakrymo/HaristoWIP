@@ -30,6 +30,13 @@ a {
   top:0 ;
   right: 0;
   z-index: 999;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.preloader_wrapper.page-loaded {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .preloader {
@@ -52,6 +59,7 @@ a {
   height: 100vh;
   position: fixed;
   top:0;
+  z-index: 100;
 }
 
 .wrapper_hero_animation {
@@ -85,7 +93,7 @@ a {
   visibility: hidden;
 }
 
-#triggerSectionA {
+/* #triggerSectionA {
   position: relative;
   width: 40px;
   height: 40px;
@@ -105,6 +113,22 @@ a {
   top:0;
   visibility: hidden;
   transform: translateY(100vh);
+} */
+
+.animatedMapContainer {
+  height: 300px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+#animatedMap {
+  position: relative;
+  height: 400px;
+  transform: scale(1);
+  top: 300px;
+  right: 0;
+  left: 55%;
+  transition: transform 2s ease;
 }
 
 #sectionB {
@@ -137,6 +161,10 @@ a {
   visibility: visible;
   transform: translateY(0)
 }
+
+/* #triggerSectionA.aos-animate ~ #sectionA > .animatedMapContainer > #animatedMap {
+  transform: scale(1);
+} */
 
 #triggerSectionB {
   position: relative;
@@ -238,6 +266,30 @@ a {
 .hero_layout_grid :nth-child(even) {
   background-color: rgba(0, 255, 242, 0.5)
 } */
+
+#fs-menu {
+  background: #bc2b2e;
+  width: 100%;
+  height: 100%;
+  color: white;
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.fs-menu-item {
+  text-align: center;
+  list-style: none;
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+}
 
 .hamburgermenu {
   position: relative;
@@ -402,28 +454,6 @@ a {
   height: 480px;
 }
 
-.openmenu {
-  background: #bc2b2e;
-  width: 100vh;
-  height: 100vw;
-  color: white;
-  position: fixed;
-  z-index: 9;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.openmenu li {
-  text-align: center;
-  list-style: none;
-  font-size: 3.2rem;
-  margin-bottom: 20px;
-}
-
 .circle {
 	position: absolute;
   border: solid 1px #2bbcb5;
@@ -433,4 +463,114 @@ a {
   z-index: 9999;
   pointer-events: none;
   mix-blend-mode: difference;
+}
+
+.whitespace {
+  height: 3000px;
+  position: relative;
+  z-index: 0;
+}
+
+#section-A {
+  height: 100vh;
+  width: 100%;
+  background: white;
+  position: fixed;
+  z-index: 101;
+  top: 0px;
+  opacity: 1;
+  transform: translateY(100vh);
+  transition: transform 1.2s ease, opacity 1s ease;
+  box-shadow: 0px 0px 25px 10px rgba(0,0,0,0.15);
+}
+
+#section-A.visible-section {
+  transform: translateY(0);
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  height: 96px;
+  width: 100%;
+  background: white;
+  z-index: 110;
+  transition: transform 1s ease;
+  transform: translateY(-96px);
+  box-shadow: 0px 0px 25px 10px rgba(0,0,0,0.15);
+}
+
+#navbar.show-navbar{
+  transform: translateY(0);
+}
+
+.container {
+  max-width: 1200px;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+}
+
+.section-A-cols {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: blue;
+}
+
+.section-A-l-col {
+  background: #f4f4f4;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+}
+.section-A-r-col {
+  background: white;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  align-content: flex-end;
+}
+
+#map-animation {
+  margin-top: auto;
+  transition: transform 1s 0.1s ease;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+#section-A.visible-section .section-A-cols .section-A-r-col #map-animation {
+  transform: scale(1);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#navbar-logo {
+  height: 70%;
+}
+
+.hamburgermenu.red {
+  top: 0%;
+  left: 0%;
+
+}
+.hamburgermenu.red > * {
+  background: #bc2b2e;
+  border-radius: 5px;
+}
+
+.navline {
+  transform-origin: right !important;
 }

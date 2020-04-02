@@ -380,7 +380,7 @@ h1,h2,h3,h4,p {
 }
 
 #scrollindicator_text {
-  font-family: 'Brandon Grotesque', sans-serif;
+  font-family: brandon-grotesque, sans-serif;
   font-weight: bold;
   font-size: 1.48rem;
   color: #404040;

@@ -2,6 +2,11 @@
   font-size: 62.5%;
 }
 
+::selection {
+  background-color: #bc2b2e;
+  color: white;
+}
+
 html {
   scroll-behavior: smooth;
 }

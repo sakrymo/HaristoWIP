@@ -67,7 +67,7 @@ h1,h2,h3,h4,p {
   z-index: 100;
   transform: scale(1);
   filter: none;
-  transition: transform 1s ease, filter 1s ease;
+  transition: transform 1s ease, filter 2s ease;
 }
 
 .wrapper_hero_animation {
@@ -697,5 +697,5 @@ h1,h2,h3,h4,p {
 
 .hero_section.hidden {
   transform: scale(1.3);
-  filter: brightness(2000%);
+  filter: brightness(2000%) blur(20px);
 }

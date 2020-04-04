@@ -16,6 +16,7 @@ function pageLoaded() {
   preloader.classList.add("page-loaded");
   videoBackground.play();
   mapAnimation.pause();
+  scrollIndicator.classList.add("fade-in")
 };
 
 scrollIndicator.addEventListener('click', function(){

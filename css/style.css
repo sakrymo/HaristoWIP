@@ -416,6 +416,14 @@ h1,h2,h3,h4,p {
   justify-content: center;
   align-items: center;
   animation: 1.5s ease-in-out both infinite scrollindicator;
+  transition: opacity 1s 1s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scrollindicator_container.fade-in {
+  visibility: visible;
+  opacity: 1;
 }
 
 @keyframes scrollindicator {

@@ -14,9 +14,6 @@ window.onscroll = function () {
   showSections()
 };
 
-// Page loading
-// document.onload(pageLoaded());
-
 function pageLoaded() {
   preloader.classList.add("page-loaded");
   videoBackground.play();
@@ -41,6 +38,16 @@ function showSections() {
     navbar.classList.remove("show-navbar")
     heroSection.classList.remove("hidden");
     mapAnimation.pause();
+  }
+
+  if (document.documentElement.scrollTop > 64+(window.innerHeight)) {
+    document.getElementById('section-B').classList.add('visible-section');
+    sectionA.classList.add('hidden');
+    mapAnimation.pause();
+  } else {
+    document.getElementById('section-B').classList.remove('visible-section');
+    sectionA.classList.remove('hidden');
+    mapAnimation.play();
   }
 }
 

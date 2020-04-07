@@ -4,6 +4,12 @@
   font-size: 62.5%;
 }
 
+@media screen and (max-width: 1390px) {
+  :root {
+    font-size: 54%;
+  }
+}
+
 ::selection {
   background-color: #bc2b2e;
   color: white;
@@ -229,6 +235,10 @@ p {
   text-align: right;
   height: 100%;
   padding-top: 5%;
+}
+
+.menu-align-right > a > .fs-menu-item {
+  transform-origin: right;
 }
 
 .fs-menu > .menu-align-right > a:hover > .fs-menu-item {

@@ -73,7 +73,7 @@ function toggleMenu(checkbox) {
       document.querySelector('body').style = "overflow: hidden;";
       fsMenu2.classList.add('active-menu');
       navbar.classList.add('second-menu-open');
-      .mapAnimation.pause();
+      mapAnimation.pause();
     } else if (checkbox.checked === false) {
       console.log(`Right menu is now active: ${checkbox.checked}`);
       document.querySelector('body').style = "overflow: visible;";

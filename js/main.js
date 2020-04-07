@@ -8,7 +8,8 @@ const sectionABreakpoint = document.querySelector('#section-A-breakpoint')
 const scrollIndicator = document.querySelector('.scrollindicator-container')
 const checkboxLeft = document.querySelector('#menu-left');
 const checkboxRight = document.querySelector('#menu-right');
-const fsMenu = document.querySelector('#fs-menu');
+const fsMenu1 = document.querySelector('.fs-menu.firstmenu');
+const fsMenu2 = document.querySelector('.fs-menu.secondmenu');
 
 window.onscroll = function () {
   showSections()
@@ -57,12 +58,12 @@ function toggleMenu(checkbox) {
     if (checkbox.checked === true && sectionA.classList.contains('visible-section') !== true) {
       console.log(`Left menu is now active: ${checkbox.checked}`);
       document.querySelector('body').style = "overflow: hidden;";
-      fsMenu.classList.add('active-menu');
+      fsMenu1.classList.add('active-menu');
       checkboxLeft.parentElement.classList.add('ontop');
     } else if (checkbox.checked === false) {
       console.log(`Left menu is now active: ${checkbox.checked}`);
       document.querySelector('body').style = "overflow: visible;";
-      fsMenu.classList.remove('active-menu');
+      fsMenu1.classList.remove('active-menu');
     }
   }
 
@@ -70,9 +71,13 @@ function toggleMenu(checkbox) {
     if (checkbox.checked === true && sectionA.classList.contains('visible-section') === true) {
       console.log(`Right menu is now active: ${checkbox.checked}`);
       document.querySelector('body').style = "overflow: hidden;";
+      fsMenu2.classList.add('active-menu');
+      navbar.classList.add('second-menu-open');
     } else if (checkbox.checked === false) {
       console.log(`Right menu is now active: ${checkbox.checked}`);
       document.querySelector('body').style = "overflow: visible;";
+      fsMenu2.classList.remove('active-menu');
+      navbar.classList.remove('second-menu-open');
     }
   }
 }

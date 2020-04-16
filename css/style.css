@@ -10,6 +10,10 @@
   }
 }
 
+#mobile {
+  display: none;
+}
+
 ::selection {
   background-color: #bc2b2e;
   color: white;
@@ -831,6 +835,18 @@ p {
   opacity: 0.35;
 }
 
-embed > #document > html > body > pre {
-  font-size: 200px;
-}
+/* Mobile */
+@media only screen and (max-width: 768px) {
+  #mobile {
+    display: block;
+  }
+  
+  #desktop {
+    display: none;
+    visibility: hidden;
+  }
+  #desktop > * {
+    display: none;
+    visibility: hidden;
+  }
+} 

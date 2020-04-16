@@ -11,13 +11,15 @@ const checkboxRight = document.querySelector('#menu-right');
 const fsMenu1 = document.querySelector('.fs-menu.firstmenu');
 const fsMenu2 = document.querySelector('.fs-menu.secondmenu');
 
+videoBackground.pause();
+
 window.onscroll = function () {
   showSections()
 };
 
 window.addEventListener('load', function() {
-  preloader.classList.add("page-loaded");
   videoBackground.play();
+  preloader.classList.add("page-loaded");
   mapAnimation.pause();
   scrollIndicator.classList.add("fade-in")
 })

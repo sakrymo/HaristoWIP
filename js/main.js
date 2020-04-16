@@ -93,7 +93,7 @@ checkboxRight.addEventListener('click', function () {
   toggleMenu(checkboxRight)
 });
 
-if (mobileView.style.display !== 'none') {
+if (mobileView.style.opacity === 1) {
   particlesJS.load('particles-js', 'js/particlesjs-config.json', function() {
     console.log('callback - particles.js config loaded');
   });

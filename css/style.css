@@ -839,8 +839,9 @@ p {
 @media only screen and (max-width: 768px) {
   #mobile {
     display: block;
+    overflow-x: hidden;
   }
-  
+
   #desktop {
     display: none;
     visibility: hidden;
@@ -848,5 +849,11 @@ p {
   #desktop > * {
     display: none;
     visibility: hidden;
+  }
+
+  .mobile-hero {
+    background: linear-gradient(#ec2a2d, rgb(70, 0, 0));
+    width: 100vw;
+    height: 100vh;
   }
 } 

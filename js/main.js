@@ -10,6 +10,7 @@ const checkboxLeft = document.querySelector('#menu-left');
 const checkboxRight = document.querySelector('#menu-right');
 const fsMenu1 = document.querySelector('.fs-menu.firstmenu');
 const fsMenu2 = document.querySelector('.fs-menu.secondmenu');
+const mobileView = document.querySelector('#mobile')
 
 window.onscroll = function () {
   showSections()
@@ -91,3 +92,9 @@ checkboxLeft.addEventListener('click', function () {
 checkboxRight.addEventListener('click', function () {
   toggleMenu(checkboxRight)
 });
+
+if (mobileView.style.display !== 'none') {
+  particlesJS.load('particles-js', 'js/particlesjs-config.json', function() {
+    console.log('callback - particles.js config loaded');
+  });
+}

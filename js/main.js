@@ -15,12 +15,12 @@ window.onscroll = function () {
   showSections()
 };
 
-function pageLoaded() {
+window.addEventListener('load', function() {
   preloader.classList.add("page-loaded");
   videoBackground.play();
   mapAnimation.pause();
   scrollIndicator.classList.add("fade-in")
-};
+})
 
 scrollIndicator.addEventListener('click', function () {
   sectionABreakpoint.scrollIntoView();

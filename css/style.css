@@ -858,4 +858,38 @@ p {
     width: 100vw;
     height: 100vh;
   }
+
+  #particles-js {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top:0;
+  }
+
+  .mobile-H {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top:0;
+    z-index: 2;
+    pointer-events: none;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobile-H-mid {
+    height: 360px;
+    width: 100%;
+    background: transparent;
+  }
+  .mobile-H-top, .mobile-H-bot {
+    background: white;
+    width: 38.4%;
+    flex-grow: 1;
+  }
 } 

@@ -11,8 +11,6 @@ const checkboxRight = document.querySelector('#menu-right');
 const fsMenu1 = document.querySelector('.fs-menu.firstmenu');
 const fsMenu2 = document.querySelector('.fs-menu.secondmenu');
 
-videoBackground.pause();
-
 window.onscroll = function () {
   showSections()
 };

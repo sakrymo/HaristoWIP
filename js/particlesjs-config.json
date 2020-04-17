@@ -70,7 +70,7 @@
   "interactivity": {
     "detect_on": "canvas",
     "events": {
-      "onhover": {
+      "ontap": {
         "enable": true,
         "mode": "grab"
       },

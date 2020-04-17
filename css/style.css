@@ -883,7 +883,7 @@ p {
   }
 
   .mobile-H-mid {
-    height: 360px;
+    height: 600px;
     width: 100%;
     background: transparent;
   }
@@ -891,5 +891,12 @@ p {
     background: white;
     width: 38.4%;
     flex-grow: 1;
+    height: 100%;
+  }
+  .mobile-H-top {
+    border-radius:0 0 20% 20%;
+  }
+  .mobile-H-bot {
+    border-radius: 18.618% 18.618% 0 0;
   }
 } 

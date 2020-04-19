@@ -912,6 +912,7 @@ p {
     clip-path: inset(0 0% 0 0);
     animation: hideTitleStroke 2s 0.3s ease-out forwards;
     padding: 2%;
+    z-index: 1;
   }
 
   #SVGTitleFill {
@@ -923,7 +924,16 @@ p {
     left: 0;
     clip-path: inset(0 100% 0 0);
     animation: revealTitleFill 2s 0.3s ease-out forwards;
-    padding: 2%; 
+    padding: 2%;
+    z-index: 2; 
+  }
+
+  #SVGSubtitle {
+    position: relative;
+    width: 80%;
+    display: block;
+    margin: auto;
+    bottom: 20%;
   }
 
   @keyframes revealTitleFill {

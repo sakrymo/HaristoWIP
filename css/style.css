@@ -899,4 +899,38 @@ p {
   .mobile-H-bot {
     border-radius: 18.618% 18.618% 0 0;
   }
+
+  #SVGTitleStroke {
+    height: 128px;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 12%;
+    left: 0;
+    clip-path: inset(0 0% 0 0);
+    animation: hideTitleStroke 2s 1s ease-out forwards;
+    padding: 2%;
+  }
+
+  #SVGTitleFill {
+    height: 127px;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: calc(-128px + 12%);
+    left: 0;
+    clip-path: inset(0 100% 0 0);
+    animation: revealTitleFill 2s 1s ease-out forwards;
+    padding: 2%; 
+  }
+
+  @keyframes revealTitleFill {
+    0% {clip-path: inset(0 100% 0 0);}
+    100% {clip-path: inset(0 0% 0 0);}
+  }
+
+  @keyframes hideTitleStroke {
+    0% {clip-path: inset(0 0 0 0);}
+    100% {clip-path: inset(0 0 0 100%);}
+  }
 } 

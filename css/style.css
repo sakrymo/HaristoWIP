@@ -910,7 +910,7 @@ p {
     top: 12%;
     left: 0;
     clip-path: inset(0 0% 0 0);
-    animation: hideTitleStroke 2s 0.3s ease-out forwards;
+    animation: hideTitleStroke 2s 0.7s ease-out forwards;
     padding: 2%;
     z-index: 1;
   }
@@ -923,7 +923,7 @@ p {
     top: calc(-128px + 12%);
     left: 0;
     clip-path: inset(0 100% 0 0);
-    animation: revealTitleFill 2s 0.3s ease-out forwards;
+    animation: revealTitleFill 2s 0.7s ease-out forwards;
     padding: 2%;
     z-index: 2; 
   }

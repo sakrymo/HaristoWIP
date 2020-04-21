@@ -955,12 +955,11 @@ p {
   .hamburgermenu.mobile {
     position: absolute;
     left: auto;
-    top: 16%;
+    top: 10%;
     right: 4%;
   }
 
   .hamburgermenu.mobile * {
     background-color: white;
   }
-
 } 

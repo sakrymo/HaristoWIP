@@ -957,9 +957,28 @@ p {
     left: auto;
     top: 10%;
     right: 4%;
+    opacity: 1;
   }
 
   .hamburgermenu.mobile * {
     background-color: white;
   }
+  
+  .margin-top-mobile {
+    height: 100vh;
+  }
+
+  .section-mobile {
+    height: 500px;
+    background: white;
+    box-shadow: 0 -16px 128px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 11;
+  }
+
+  .section-mobile.first {
+    position: relative;
+    z-index: 10;
+  }
+
 } 

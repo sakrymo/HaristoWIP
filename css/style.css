@@ -293,6 +293,7 @@ p {
 } */
 /* Hamburger Menu Styling */
 
+
 .hamburgermenu {
   position: relative;
   display: flex;
@@ -840,7 +841,8 @@ p {
 @media only screen and (max-width: 768px) {
   #mobile {
     display: block;
-    overflow-x: hidden;
+    overflow-x: visible;
+    /* CHANGE TO OVERFLOW HIDDEN WHEN READY */
     opacity: 1;
     height: auto;
     width: auto;
@@ -850,6 +852,7 @@ p {
     display: none;
     visibility: hidden;
   }
+
   #desktop > * {
     display: none;
     visibility: hidden;
@@ -889,15 +892,18 @@ p {
     width: 100%;
     background: transparent;
   }
+
   .mobile-H-top, .mobile-H-bot {
     background: white;
     width: 38.4%;
     flex-grow: 1;
     height: 100%;
   }
+
   .mobile-H-top {
     border-radius:0 0 18.618% 18.618%;
   }
+
   .mobile-H-bot {
     border-radius: 18.618% 18.618% 0 0;
   }
@@ -945,4 +951,16 @@ p {
     0% {clip-path: inset(0 0 0 0);}
     100% {clip-path: inset(0 0 0 100%);}
   }
+
+  .hamburgermenu.mobile {
+    position: absolute;
+    left: auto;
+    top: 16%;
+    right: 4%;
+  }
+
+  .hamburgermenu.mobile * {
+    background-color: white;
+  }
+
 } 

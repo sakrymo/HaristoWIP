@@ -10,7 +10,8 @@ const checkboxLeft = document.querySelector('#menu-left');
 const checkboxRight = document.querySelector('#menu-right');
 const fsMenu1 = document.querySelector('.fs-menu.firstmenu');
 const fsMenu2 = document.querySelector('.fs-menu.secondmenu');
-const mobileView = document.querySelector('#mobile')
+const mobileView = document.querySelector('#mobile');
+const checkboxMobile = document.querySelector('.hamburgermenu.mobile > input')
 
 window.onscroll = function () {
   showSections()
@@ -27,6 +28,10 @@ scrollIndicator.addEventListener('click', function () {
   sectionABreakpoint.scrollIntoView();
 });
 
+function removeHash () { 
+  history.pushState("", document.title, window.location.pathnam + window.location.search); 
+}
+
 // Section transitions
 
 function showSections() {
@@ -35,6 +40,7 @@ function showSections() {
     heroSection.classList.add("hidden");
     navbar.classList.add("show-navbar");
     mapAnimation.play();
+    removeHash()
   } else {
     sectionA.classList.remove("visible-section");
     navbar.classList.remove("show-navbar")
@@ -80,7 +86,7 @@ function toggleMenu(checkbox) {
       document.querySelector('body').style = "overflow: visible;";
       fsMenu2.classList.remove('active-menu');
       navbar.classList.remove('second-menu-open');
-      mapAnimation.play();
+      mapAnimation.play(); 
     }
   }
 }

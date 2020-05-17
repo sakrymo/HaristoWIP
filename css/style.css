@@ -283,16 +283,6 @@ p {
   box-shadow: -40px 0px 0px 1px #bc2b2e, -45px 0px 0px 0px white;
 }
 
-/* .abdfads {
-  background: green;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: 9;
-  top:0;
-} */
-/* Hamburger Menu Styling */
-
 
 .hamburgermenu {
   position: relative;
@@ -592,7 +582,7 @@ p {
   margin: auto;
 }
 
-.section-A-cols {
+.two-columns {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -601,7 +591,7 @@ p {
   background: blue;
 }
 
-.section-A-l-col {
+.left-column {
   background: white;
   width: 50%;
   height: 100%;
@@ -610,7 +600,7 @@ p {
   padding-left: 40px;
 }
 
-.section-A-r-col {
+.right-column {
   background: white;
   width: 50%;
   height: 100%;
@@ -620,7 +610,7 @@ p {
   justify-content: flex-end;
 }
 
-#map-animation {
+#map-animation, #davinci-animation {
   transition: transform 1s 0.1s ease;
   transform: scale(0);
   transform-origin: center;
@@ -637,7 +627,8 @@ p {
   margin-bottom: 95px;
 }
 
-#section-A.visible-section .section-A-cols .section-A-r-col #map-animation {
+#section-A.visible-section .two-columns .right-column #map-animation,
+#section-B.visible-section .two-columns .right-column #davinci-animation {
   transform: scale(1);
 }
 
@@ -680,9 +671,10 @@ p {
   font-weight: 900;
   font-size: 6rem;
   letter-spacing: 0.02rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   color: #bc2b2e;
   text-rendering: geometricPrecision;
+  line-height: 1.15em;
 }
 
 .copy {
@@ -837,6 +829,13 @@ p {
   opacity: 0.35;
 }
 
+#davinci-animation {
+  align-self: center;
+  justify-self: center;
+  margin-top: auto;
+  padding-bottom: 30vh;
+}
+
 /* Mobile */
 @media only screen and (max-width: 768px) {
   #mobile {
@@ -940,6 +939,7 @@ p {
     display: block;
     margin: auto;
     bottom: 20%;
+    max-width: 380px;
   }
 
   @keyframes revealTitleFill {
@@ -979,5 +979,19 @@ p {
   .section-mobile.first {
     position: relative;
     z-index: 10;
+  }
+
+  .fs-menu.mobile {
+    display: none;
+    /* opacity: 1; */
+  }
+
+  .menu-align-center {
+    width: 80%;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
   }
 } 

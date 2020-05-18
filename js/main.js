@@ -12,6 +12,7 @@ const fsMenu1 = document.querySelector('.fs-menu.firstmenu');
 const fsMenu2 = document.querySelector('.fs-menu.secondmenu');
 const mobileView = document.querySelector('#mobile');
 const checkboxMobile = document.querySelector('.hamburgermenu.mobile > input')
+const anchorFirstSection = document.querySelector('#anchor-section-A')
 
 window.onscroll = function () {
   showSections()
@@ -29,8 +30,13 @@ scrollIndicator.addEventListener('click', function () {
 });
 
 function removeHash () { 
-  history.pushState("", document.title, window.location.pathnam + window.location.search); 
+  history.pushState("", document.title, " "); 
 }
+
+anchorFirstSection.addEventListener('click', function() {
+  console.log('anchor clicked')
+  setTimeout(function(){removeHash()}, 500)
+});
 
 // Section transitions
 
@@ -40,7 +46,6 @@ function showSections() {
     heroSection.classList.add("hidden");
     navbar.classList.add("show-navbar");
     mapAnimation.play();
-    removeHash()
   } else {
     sectionA.classList.remove("visible-section");
     navbar.classList.remove("show-navbar")
@@ -104,3 +109,5 @@ if (window.innerWidth < 768) {
     console.log('callback - particles.js config loaded');
   });
 }
+
+// Anchor remove hash

@@ -8,11 +8,14 @@ const sectionABreakpoint = document.querySelector('#section-A-breakpoint')
 const scrollIndicator = document.querySelector('.scrollindicator-container')
 const checkboxLeft = document.querySelector('#menu-left');
 const checkboxRight = document.querySelector('#menu-right');
+const checkboxRightMobile = document.querySelector('#menu-right-mobile');
 const fsMenu1 = document.querySelector('.fs-menu.firstmenu');
 const fsMenu2 = document.querySelector('.fs-menu.secondmenu');
+const fsMenuM = document.querySelector('.fs-menu.mobile');
 const mobileView = document.querySelector('#mobile');
 const checkboxMobile = document.querySelector('.hamburgermenu.mobile > input')
 const anchorFirstSection = document.querySelector('#anchor-section-A')
+const davinciAnimation = document.querySelector('#davinci-animation')
 
 window.onscroll = function () {
   showSections()
@@ -33,11 +36,6 @@ function removeHash () {
   history.pushState("", document.title, " "); 
 }
 
-anchorFirstSection.addEventListener('click', function() {
-  console.log('anchor clicked')
-  setTimeout(function(){removeHash()}, 500)
-});
-
 // Section transitions
 
 function showSections() {
@@ -53,19 +51,30 @@ function showSections() {
     mapAnimation.pause();
   }
 
-  if (document.documentElement.scrollTop > 64+(window.innerHeight)) {
+  if (document.documentElement.scrollTop > 128+(window.innerHeight)) {
     document.getElementById('section-B').classList.add('visible-section');
     sectionA.classList.add('hidden');
     mapAnimation.pause();
+    davinciAnimation.play();
   } else {
     document.getElementById('section-B').classList.remove('visible-section');
     sectionA.classList.remove('hidden');
     mapAnimation.play();
+    davinciAnimation.pause();
+  }
+
+  if (document.documentElement.scrollTop > 172+(window.innerHeight*2)) {
+    davinciAnimation.pause();
+    mapAnimation.pause();
+    document.getElementById('section-C').classList.add('visible-section');
+  } else {
+    document.getElementById('section-C').classList.remove('visible-section');
   }
 }
 
-function toggleMenu(checkbox) {
+// Menu states
 
+function toggleMenu(checkbox) {
   if (checkbox === checkboxLeft) {
     if (checkbox.checked === true && sectionA.classList.contains('visible-section') !== true) {
       console.log(`Left menu is now active: ${checkbox.checked}`);
@@ -96,14 +105,30 @@ function toggleMenu(checkbox) {
   }
 }
 
+function toggleMenuMobile(checkbox) {
+  if (checkbox.checked === true) {
+    console.log('menu is now active the sign is X');
+    fsMenuM.classList.add('active-menu');
+    document.querySelector('body').style = "overflow: hidden;";
+  } else if (checkbox.checked === false) {
+    console.log('menu is now inactive the sign is hamburger');
+    fsMenuM.classList.remove('active-menu');
+    document.querySelector('body').style = "overflow: visible;";
+  }
+}
+
 // Menu triggers
 checkboxLeft.addEventListener('click', function () {
-  toggleMenu(checkboxLeft)
+  toggleMenu(checkboxLeft);
 });
 checkboxRight.addEventListener('click', function () {
-  toggleMenu(checkboxRight)
+  toggleMenu(checkboxRight);
+});
+checkboxRightMobile.addEventListener('click', function () {
+  toggleMenuMobile(checkboxRightMobile);
 });
 
+// Particles.js on mobile
 if (window.innerWidth < 768) {
   particlesJS.load('particles-js', 'js/particlesjs-config.json', function() {
     console.log('callback - particles.js config loaded');
@@ -111,3 +136,6 @@ if (window.innerWidth < 768) {
 }
 
 // Anchor remove hash
+anchorFirstSection.addEventListener('click', function() {
+  setTimeout(function(){removeHash()}, 500);
+});

@@ -497,7 +497,7 @@ p {
 /* Space */
 
 .whitespace {
-  height: 3000px;
+  height: 4000px;
   position: relative;
   z-index: 0;
   pointer-events: none;
@@ -778,19 +778,6 @@ p {
   visibility: hidden;
 }
 
-#sectionB {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: green;
-  z-index: 10000;
-  top: 0;
-  opacity: 0;
-  transition: 2s ease;
-  transform: translateX(-100vw);
-  visibility: hidden;
-}
-
 #noscript {
   color: white;
   font-size: 2rem;
@@ -834,6 +821,26 @@ p {
   justify-self: center;
   margin-top: auto;
   padding-bottom: 30vh;
+}
+
+/* Section C - We are a network */
+
+#section-C {
+  height: 100vh;
+  width: 100%;
+  background: white;
+  position: fixed;
+  z-index: 102;
+  top: 0px;
+  opacity: 1;
+  transform: translateY(100vh);
+  transition: transform 1.2s ease, opacity 1s ease;
+  box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.15);
+  margin-top: 96px;
+}
+
+#section-C.visible-section {
+  transform: translateY(0);
 }
 
 /* Mobile */
@@ -982,8 +989,19 @@ p {
   }
 
   .fs-menu.mobile {
-    display: none;
-    /* opacity: 1; */
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .fs-menu.mobile.active-menu {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .fs-menu-item:active {
+    color: white;
+    opacity: 1;
+    transition: none;
   }
 
   .menu-align-center {
@@ -993,5 +1011,17 @@ p {
     text-align: center;
     justify-content: center;
     height: 100%;
+  }
+
+  .mobile-visit-main-site {
+    margin-top: 64px;
+  }
+
+  .scroll-indicator-mobile {
+    width: 100%;
+    height: 150px;
+    background: blue;
+    margin: auto;
+    margin-top: 5vh;
   }
 } 

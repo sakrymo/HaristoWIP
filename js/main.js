@@ -21,14 +21,13 @@ window.onscroll = function () {
   showSections()
 };
 
-setTimeout(() => {
-  videoBackground.addEventListener('canplay', function() {
-    videoBackground.play();
-    preloader.classList.add("page-loaded");
-    mapAnimation.pause();
-    scrollIndicator.classList.add("fade-in");
-  })
-}, 1000);
+videoBackground.onplaying = function() {
+  videoBackground.play();
+  preloader.classList.add("page-loaded");
+  mapAnimation.pause();
+  davinciAnimation.pause();
+  scrollIndicator.classList.add("fade-in");
+}
 
 scrollIndicator.addEventListener('click', function () {
   sectionABreakpoint.scrollIntoView();

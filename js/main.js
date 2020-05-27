@@ -21,14 +21,11 @@ window.onscroll = function () {
   showSections()
 };
 
-function closePreloader() {
+videoBackground.addEventListener('canplaythrough', function() {
   videoBackground.play();
   preloader.classList.add("page-loaded");
   mapAnimation.pause();
   scrollIndicator.classList.add("fade-in");
-}
-videoBackground.addEventListener('canplay', function() {
-  closePreloader();
 })
 
 scrollIndicator.addEventListener('click', function () {

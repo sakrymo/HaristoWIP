@@ -21,13 +21,17 @@ window.onscroll = function () {
   showSections()
 };
 
-videoBackground.onplaying = function() {
-  videoBackground.play();
-  preloader.classList.add("page-loaded");
-  mapAnimation.pause();
-  davinciAnimation.pause();
-  scrollIndicator.classList.add("fade-in");
+function closePreloader() {
+  videoBackground.onplaying = function() {
+    videoBackground.play();
+    preloader.classList.add("page-loaded");
+    mapAnimation.pause();
+    davinciAnimation.pause();
+    scrollIndicator.classList.add("fade-in");
+  }
 }
+
+setTimeout(function() { closePreloader() }, 500);
 
 scrollIndicator.addEventListener('click', function () {
   sectionABreakpoint.scrollIntoView();

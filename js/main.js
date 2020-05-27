@@ -28,9 +28,7 @@ setTimeout(() => {
     mapAnimation.pause();
     scrollIndicator.classList.add("fade-in");
   })
-}, 500);
-
-
+}, 1000);
 
 scrollIndicator.addEventListener('click', function () {
   sectionABreakpoint.scrollIntoView();

@@ -18,4 +18,12 @@ LOW PRIORITY
 [] Language switch
 [] Try ruby on rails
 
+
+Current changes
+- Added new video of Da Vinci
+- Preloader closes only when video can play
+
+
+
 =end
+

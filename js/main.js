@@ -31,10 +31,6 @@ videoBackground.addEventListener('canplay', function() {
   closePreloader();
 })
 
-window.addEventListener('load', function() {
-
-})
-
 scrollIndicator.addEventListener('click', function () {
   sectionABreakpoint.scrollIntoView();
 })

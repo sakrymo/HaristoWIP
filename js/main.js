@@ -21,7 +21,7 @@ window.onscroll = function () {
   showSections()
 };
 
-videoBackground.addEventListener('loadeddata', function() {
+videoBackground.addEventListener('canplay', function() {
   videoBackground.play();
   preloader.classList.add("page-loaded");
   mapAnimation.pause();

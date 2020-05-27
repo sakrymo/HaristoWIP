@@ -27,3 +27,5 @@ Current changes
 
 =end
 
+# if section B is visible and DaVinci is less than halfway through then play and later pause the video
+# if section B is not visible and DaVinci is at half then play from half to end

@@ -21,21 +21,16 @@ window.onscroll = function () {
   showSections()
 };
 
-function closePreloader() {
-  videoBackground.onplaying = function() {
-    videoBackground.play();
-    preloader.classList.add("page-loaded");
-    mapAnimation.pause();
-    davinciAnimation.pause();
-    scrollIndicator.classList.add("fade-in");
-  }
-}
-
-setTimeout(function() { closePreloader() }, 500);
+window.addEventListener('load', function() {
+  videoBackground.play();
+  preloader.classList.add("page-loaded");
+  mapAnimation.pause();
+  scrollIndicator.classList.add("fade-in")
+})
 
 scrollIndicator.addEventListener('click', function () {
   sectionABreakpoint.scrollIntoView();
-})
+});
 
 function removeHash () { 
   history.pushState("", document.title, " "); 
@@ -44,6 +39,7 @@ function removeHash () {
 // Section transitions
 
 function showSections() {
+  // Section A - We Are Global
   if (document.documentElement.scrollTop > 64) {
     sectionA.classList.add("visible-section");
     heroSection.classList.add("hidden");
@@ -55,7 +51,7 @@ function showSections() {
     heroSection.classList.remove("hidden");
     mapAnimation.pause();
   }
-
+  // Section B - We Are Marketers
   if (document.documentElement.scrollTop > 128+(window.innerHeight)) {
     document.getElementById('section-B').classList.add('visible-section');
     sectionA.classList.add('hidden');
@@ -67,7 +63,7 @@ function showSections() {
     mapAnimation.play();
     davinciAnimation.pause();
   }
-
+  // Section C - We Are a Network
   if (document.documentElement.scrollTop > 172+(window.innerHeight*2)) {
     davinciAnimation.pause();
     mapAnimation.pause();
@@ -76,6 +72,15 @@ function showSections() {
     document.getElementById('section-C').classList.remove('visible-section');
   }
 }
+
+// DaVinci Animation In & Out
+
+// davinciAnimation.addEventListener('play', function() {
+//   if (davinciAnimation)
+//   while (davinciAnimation.currentTime) {
+
+//   }
+// })
 
 // Menu states
 

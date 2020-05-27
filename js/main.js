@@ -22,10 +22,12 @@ window.onscroll = function () {
 };
 
 window.addEventListener('load', function() {
-  videoBackground.play();
-  preloader.classList.add("page-loaded");
-  mapAnimation.pause();
-  scrollIndicator.classList.add("fade-in")
+  if(videoBackground.readyState===4) {
+    videoBackground.play();
+    preloader.classList.add("page-loaded");
+    mapAnimation.pause();
+    scrollIndicator.classList.add("fade-in");
+  }
 })
 
 scrollIndicator.addEventListener('click', function () {

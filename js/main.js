@@ -21,16 +21,23 @@ window.onscroll = function () {
   showSections()
 };
 
-window.addEventListener('load', function() {
+function closePreloader() {
   videoBackground.play();
   preloader.classList.add("page-loaded");
   mapAnimation.pause();
   scrollIndicator.classList.add("fade-in");
-});
+}
+videoBackground.addEventListener('canplay', function() {
+  closePreloader();
+})
+
+window.addEventListener('load', function() {
+
+})
 
 scrollIndicator.addEventListener('click', function () {
   sectionABreakpoint.scrollIntoView();
-});
+})
 
 function removeHash () { 
   history.pushState("", document.title, " "); 

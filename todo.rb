@@ -5,6 +5,7 @@ HIGH PRIORITY
 [] make davinci section
 [] make the animation for partners members etc
 [] add a working contact form and redirect to main site as last section
+[] add a list of countries in first section
 
 MEDIUM PRIORITY
 [] Make preloader stop only when the video is loaded progress bar would be cool

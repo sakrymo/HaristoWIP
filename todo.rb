@@ -25,7 +25,6 @@ Current changes
 - Preloader closes only when video can play
 
 
-
 =end
 
 # if section B is visible and DaVinci is less than halfway through then play and later pause the video

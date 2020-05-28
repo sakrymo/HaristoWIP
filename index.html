@@ -54,7 +54,7 @@
             <div class="topright"></div>
             <div class="centerright"></div>
             <div class="centermiddle"></div>
-            <div class="centerleft"></div>
+            <div class="centerleft"><button class="section-anchor" goto="sectionB">Scrolling Test</button></div>
             <div class="bottomright">
 
               <div class="socialmediaicons">
@@ -67,12 +67,11 @@
             </div>
             <div class="bottommiddle">
 
-              <a href="#section-A-breakpoint" id="anchor-section-A">
-                <div class="scrollindicator-container">
+                <div class="scrollindicator-container" goto="sectionA">
                   <span id="scrollindicator-text">LEARN MORE</span>
                   <img src="img/scrollindicator.svg" alt="" id="scrollindicator">
                 </div>
-              </a>
+
             </div>
             <div class="bottomleft"></div>
           </div>
@@ -81,12 +80,12 @@
       <!-- FIRST FS MENU -->
       <nav class="fs-menu firstmenu">
         <div class="menu-align-left">
-          <a href="#"><li class="fs-menu-item"> Where We Are</li></a>
-          <a href="#"><li class="fs-menu-item"> Who We Are</li></a>
-          <a href="#"><li class="fs-menu-item"> What We Do</li></a>
-          <a href="#"><li class="fs-menu-item"> Contact Us</li></a>
+          <a href="#"><li class="fs-menu-item section-anchor" goto="sectionA"> Where We Are</li></a>
+          <a href="#"><li class="fs-menu-item section-anchor" goto="sectionB"> Who We Are</li></a>
+          <a href="#"><li class="fs-menu-item section-anchor" goto="sectionC"> What We Do</li></a>
+          <a href="#"><li class="fs-menu-item section-anchor" goto="SectionD"> Contact Us</li></a>
           <br><br><br><br>
-          <a href="#"><li class="fs-menu-item">Visit full website ></li></a>
+          <a href="https://haristo.com" target="_blank"><li class="fs-menu-item">Visit full website ></li></a>
         </div>
       </nav>
     </section>
@@ -107,12 +106,12 @@
     <!-- SECOND FS MENU -->
     <nav class="fs-menu secondmenu">
       <div class="menu-align-right">
-        <a href="#"><li class="fs-menu-item"> Where We Are</li></a>
-        <a href="#"><li class="fs-menu-item"> Who We Are</li></a>
-        <a href="#"><li class="fs-menu-item"> What We Do</li></a>
-        <a href="#"><li class="fs-menu-item"> Contact Us</li></a>
+        <a href="#"><li class="fs-menu-item section-anchor" goto="sectionA"> Where We Are</li></a>
+        <a href="#"><li class="fs-menu-item section-anchor" goto="sectionB"> Who We Are</li></a>
+        <a href="#"><li class="fs-menu-item section-anchor" goto="sectionC"> What We Do</li></a>
+        <a href="#"><li class="fs-menu-item section-anchor" goto="SectionD"> Contact Us</li></a>
         <br><br><br><br>
-        <a href="#"><li class="fs-menu-item">Visit full website ></li></a>
+        <a href="https://haristo.com" target="_blank"><li class="fs-menu-item">Visit full website ></li></a>
       </div>
     </nav>
   
@@ -149,7 +148,8 @@
         <div class="left-column">
           <div class="textbox">
             <h2 class="overline">Integrated marketing is our passion</h2>
-            <h1 class="section-heading">WE ARE MARKETERS</h1>
+            <h1 class="section-heading" id="test123">WE ARE MARKETERS</h1>
+            <button id="testheading">test</button>
             <p class="copy">
               Integration means not only coherence, holism, but also strength and trust. Integrated marketing is not only a synergy of market activities, but also responsibility for the social and environmental impact of companies in their influence environments.<br><br>
               Integrators understand that content design should respond to the ills and joy of persona at individual stages of the customer's journey experience. They know that although purchasing decisions are finally made in the blink of an eye, they are made up of the overall impact of a brand or product whose emission should be sustainable and consistent.

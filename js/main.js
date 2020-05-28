@@ -4,7 +4,6 @@ const heroSection = document.querySelector('.hero-section');
 const sectionA = document.querySelector('#section-A')
 const navbar = document.querySelector('#navbar');
 const mapAnimation = document.querySelector('#map-animation')
-const sectionABreakpoint = document.querySelector('#section-A-breakpoint')
 const scrollIndicator = document.querySelector('.scrollindicator-container')
 const checkboxLeft = document.querySelector('#menu-left');
 const checkboxRight = document.querySelector('#menu-right');
@@ -28,19 +27,73 @@ window.addEventListener('load', function() {
   scrollIndicator.classList.add("fade-in")
 })
 
-scrollIndicator.addEventListener('click', function () {
-  sectionABreakpoint.scrollIntoView();
+// Scrolling Anchors
+scrollIndicator.addEventListener('click', e => {
+  scrollToSection(e);
 });
 
-function removeHash () { 
-  history.pushState("", document.title, " "); 
+document.querySelectorAll('.section-anchor').forEach(item => {
+  item.addEventListener('click', e => {
+    closeMenu();
+    navbar.classList.remove('second-menu-open');
+    scrollToSection(e);
+  })
+})
+
+function scrollToSection(e) {
+  const section = (e.currentTarget.attributes.goto.nodeValue);
+  let offset = 100;
+  let timeout = 10
+
+  switch (section) {
+    case "sectionA":
+      setTimeout(() => {
+        window.scrollTo(0, sectionABreakpoint+offset);
+      }, timeout);
+      break;
+    
+    case "sectionB":
+      setTimeout(() => {
+        window.scrollTo(0, sectionBBreakpoint+offset);
+      }, timeout);  
+      break;
+
+    case "sectionC":
+      setTimeout(() => {
+        window.scrollTo(0, sectionCBreakpoint+offset);
+      }, timeout);  
+      break;
+    
+    case "sectionD":
+      setTimeout(() => {
+        window.scrollTo(0, sectionDBreakpoint+offset);
+      }, timeout);
+      break;
+
+    default:
+      break;
+  }
 }
+
+function closeMenu() {
+  document.querySelector('body').style = "overflow: visible;";
+  checkboxLeft.checked = false;
+  checkboxRight.checked = false;
+  fsMenu1.classList.remove('active-menu');
+  fsMenu2.classList.remove('active-menu');
+}
+
+// Section Positions Y
+const sectionHeroBreakpoint = 0;
+const sectionABreakpoint = 64;
+const sectionBBreakpoint = 128+(window.innerHeight);
+const sectionCBreakpoint = 172+(window.innerHeight*2);
 
 // Section transitions
 
 function showSections() {
   // Section A - We Are Global
-  if (document.documentElement.scrollTop > 64) {
+  if (document.documentElement.scrollTop > sectionABreakpoint) {
     sectionA.classList.add("visible-section");
     heroSection.classList.add("hidden");
     navbar.classList.add("show-navbar");
@@ -52,7 +105,7 @@ function showSections() {
     mapAnimation.pause();
   }
   // Section B - We Are Marketers
-  if (document.documentElement.scrollTop > 128+(window.innerHeight)) {
+  if (document.documentElement.scrollTop > sectionBBreakpoint) {
     document.getElementById('section-B').classList.add('visible-section');
     sectionA.classList.add('hidden');
     mapAnimation.pause();
@@ -64,7 +117,7 @@ function showSections() {
     davinciAnimation.pause();
   }
   // Section C - We Are a Network
-  if (document.documentElement.scrollTop > 172+(window.innerHeight*2)) {
+  if (document.documentElement.scrollTop > sectionCBreakpoint) {
     davinciAnimation.pause();
     mapAnimation.pause();
     document.getElementById('section-C').classList.add('visible-section');
@@ -145,7 +198,10 @@ if (window.innerWidth < 768) {
   });
 }
 
-// Anchor remove hash
-anchorFirstSection.addEventListener('click', function() {
-  setTimeout(function(){removeHash()}, 500);
-});
+document.querySelector('button#testheading').addEventListener('click', function() {
+  if (document.querySelector('#test123').classList.contains('heading-hidden')) {
+    document.querySelector('#test123').classList.remove('heading-hidden');
+  } else {
+    document.querySelector('#test123').classList.add('heading-hidden');
+  }
+})

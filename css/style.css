@@ -283,7 +283,6 @@ p {
   box-shadow: -40px 0px 0px 1px #bc2b2e, -45px 0px 0px 0px white;
 }
 
-
 .hamburgermenu {
   position: relative;
   display: flex;
@@ -386,6 +385,7 @@ p {
   transition: color 0.3s ease-out;
 }
 
+
 .scrollindicator-container:hover>#scrollindicator-text {
   color: #bc2b2e;
 }
@@ -411,6 +411,7 @@ p {
   transition: opacity 1s 1s ease;
   opacity: 0;
   visibility: hidden;
+  cursor: pointer;
 }
 
 .scrollindicator-container.fade-in {
@@ -679,6 +680,12 @@ p {
   color: #bc2b2e;
   text-rendering: geometricPrecision;
   line-height: 1.15em;
+  transition: clip-path .75s cubic-bezier(0.645, 0.045, 0.355, 1);
+  clip-path: inset(0);
+}
+
+.section-heading.heading-hidden {
+  clip-path: inset(0 100% 0 0);
 }
 
 .copy {

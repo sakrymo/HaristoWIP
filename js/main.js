@@ -16,6 +16,8 @@ const checkboxMobile = document.querySelector('.hamburgermenu.mobile > input')
 const anchorFirstSection = document.querySelector('#anchor-section-A')
 const davinciAnimation = document.querySelector('#davinci-animation')
 
+let activeSection = ""
+
 window.onscroll = function () {
   showSections()
 };
@@ -46,6 +48,12 @@ function scrollToSection(e) {
   let timeout = 10
 
   switch (section) {
+    case "sectionHero":
+      setTimeout(() => {
+        window.scrollTo(0, sectionHeroBreakpoint);
+      }, timeout);
+      break;
+
     case "sectionA":
       setTimeout(() => {
         window.scrollTo(0, sectionABreakpoint+offset);
@@ -92,12 +100,16 @@ const sectionCBreakpoint = 172+(window.innerHeight*2);
 // Section transitions
 
 function showSections() {
+  if (document.documentElement.scrollTop < sectionABreakpoint) {
+    activeSection = "sectionHero"
+  }
   // Section A - We Are Global
   if (document.documentElement.scrollTop > sectionABreakpoint) {
     sectionA.classList.add("visible-section");
     heroSection.classList.add("hidden");
     navbar.classList.add("show-navbar");
     mapAnimation.play();
+    activeSection = "sectionA"
   } else {
     sectionA.classList.remove("visible-section");
     navbar.classList.remove("show-navbar")
@@ -110,6 +122,7 @@ function showSections() {
     sectionA.classList.add('hidden');
     mapAnimation.pause();
     davinciAnimation.play();
+    activeSection = "sectionB";
   } else {
     document.getElementById('section-B').classList.remove('visible-section');
     sectionA.classList.remove('hidden');
@@ -121,9 +134,11 @@ function showSections() {
     davinciAnimation.pause();
     mapAnimation.pause();
     document.getElementById('section-C').classList.add('visible-section');
+    activeSection = "sectionC"
   } else {
     document.getElementById('section-C').classList.remove('visible-section');
   }
+  console.log(`active section is ${activeSection}`);
 }
 
 // DaVinci Animation In & Out

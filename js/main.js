@@ -121,7 +121,7 @@ function davinciIn() {
 
 function davinciOut() {
   if (davinciAnimation.currentTime < 6) {
-    davinciAnimation.currentTime = 7;
+    davinciAnimation.currentTime = 6.5;
     davinciAnimation.play();
   }
   hideDavinci();

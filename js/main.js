@@ -91,6 +91,42 @@ function closeMenu() {
   fsMenu2.classList.remove('active-menu');
 }
 
+// Davinci show & hide
+// let showDavinci = showDavinci();
+// let hideDavinci = hideDavinci();
+
+function showDavinci() {
+  setInterval(() => {
+    if (davinciAnimation.currentTime > 5) {
+      davinciAnimation.pause();
+    }
+  }, 50);
+}
+
+function hideDavinci() {
+  setInterval(() => {
+    if (davinciAnimation.currentTime > 6) {
+      davinciAnimation.play();
+    }
+  }, 50);
+}
+
+function davinciIn() {
+  if (davinciAnimation.currentTime > 6) {
+    davinciAnimation.currentTime = 0;
+    davinciAnimation.play();
+  }
+  showDavinci();
+}
+
+function davinciOut() {
+  if (davinciAnimation.currentTime < 6) {
+    davinciAnimation.currentTime = 7;
+    davinciAnimation.play();
+  }
+  hideDavinci();
+}
+
 // Section Positions Y
 const sectionHeroBreakpoint = 0;
 const sectionABreakpoint = 64;
@@ -123,16 +159,20 @@ function showSections() {
     mapAnimation.pause();
     davinciAnimation.play();
     activeSection = "sectionB";
+    davinciIn();
+    clearInterval(hideDavinci);
   } else {
     document.getElementById('section-B').classList.remove('visible-section');
     sectionA.classList.remove('hidden');
     mapAnimation.play();
-    davinciAnimation.pause();
+    davinciOut();
+    clearInterval(showDavinci);
   }
   // Section C - We Are a Network
   if (document.documentElement.scrollTop > sectionCBreakpoint) {
     davinciAnimation.pause();
     mapAnimation.pause();
+    davinciOut();
     document.getElementById('section-C').classList.add('visible-section');
     activeSection = "sectionC"
   } else {
@@ -140,17 +180,6 @@ function showSections() {
   }
   console.log(`active section is ${activeSection}`);
 }
-
-// DaVinci Animation In & Out
-
-// davinciAnimation.addEventListener('play', function() {
-//   if (davinciAnimation)
-//   while (davinciAnimation.currentTime) {
-
-//   }
-// })
-
-// Menu states
 
 function toggleMenu(checkbox) {
   if (checkbox === checkboxLeft) {

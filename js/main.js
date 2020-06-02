@@ -36,8 +36,8 @@ scrollIndicator.addEventListener('click', e => {
 
 document.querySelectorAll('.section-anchor').forEach(item => {
   item.addEventListener('click', e => {
-    closeMenu();
     navbar.classList.remove('second-menu-open');
+    closeMenu();
     scrollToSection(e);
   })
 })

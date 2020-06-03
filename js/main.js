@@ -18,6 +18,9 @@ const davinciAnimation = document.querySelector('#davinci-animation');
 const sectionHeading = document.querySelectorAll('.section-heading');
 const sectionOverline = document.querySelectorAll('.overline');
 const sectionCopy = document.querySelectorAll('.copy');
+const playCursor = document.querySelector('.play-cursor');
+const playCursorHover = document.querySelector('.play-cursor-hover');
+const playCursorActive = document.querySelector('.play-cursor-active');
 
 let activeSection = ""
 
@@ -93,6 +96,16 @@ function closeMenu() {
   fsMenu1.classList.remove('active-menu');
   fsMenu2.classList.remove('active-menu');
 }
+
+// Play cursor
+window.addEventListener('mousemove', function(e) {
+  if(sectionA.classList.contains('visible-section')) {
+    console.log(playCursor.offsetTop);
+    console.log(playCursor.offsetLeft);
+    playCursor.style.top = e.clientY + "px";
+    playCursor.style.left = e.clientX + "px";
+  }
+});
 
 // Davinci show & hide
 // let showDavinci = showDavinci();
@@ -305,18 +318,24 @@ if (window.innerWidth < 768) {
 // Pause on hover
 mapAnimation.addEventListener('mouseover', function() {
   mapAnimation.pause();
+  playCursor.style.visibility="visible";
 });
 
 mapAnimation.addEventListener('mouseout', function() {
   mapAnimation.play();
+  playCursor.style.visibility="hidden";
 });
 
 mapAnimation.addEventListener('mousedown', function() {
   mapAnimation.play();
+  playCursorActive.style.transform = "scale(1)";
+  playCursorHover.style.clipPath = "inset(0 50% 0 50%)";
 });
 
 mapAnimation.addEventListener('mouseup', function() {
   mapAnimation.pause();
+  playCursorActive.style.transform = "scale(0)";
+  playCursorHover.style.clipPath = "inset(0 0 0 0)";
 });
 // document.querySelector('button#testheading').addEventListener('click', function() {
 //   if (document.querySelector('#test123').classList.contains('heading-hidden')) {

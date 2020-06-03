@@ -618,7 +618,10 @@ p {
   width: 100%;
   height: auto;
   margin-bottom: 40px;
-  pointer-events: none;
+}
+
+#map-animation {
+  cursor: pointer;
 }
 
 #davinci-animation {
@@ -669,6 +672,13 @@ p {
   margin-bottom: 0.5rem;
   color: #bc2b2e;
   font-weight: 900;
+  transition: opacity 1.25s 0.5s ease-out;
+  opacity: 1;
+}
+
+.overline.overline-hidden {
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
 .section-heading {
@@ -680,12 +690,13 @@ p {
   color: #bc2b2e;
   text-rendering: geometricPrecision;
   line-height: 1.15em;
-  transition: clip-path .75s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: clip-path 1.5s 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
   clip-path: inset(0);
 }
 
 .section-heading.heading-hidden {
   clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.4s 0.25s ease;
 }
 
 .copy {
@@ -694,6 +705,12 @@ p {
   line-height: 1.6em;
   font-weight: 500;
   text-rendering: optimizeLegibility;
+  transition: opacity 1s 0.4s, transform 1s 0.4s;
+}
+
+.copy.hidden {
+  opacity: 0;
+  transform: translateY(50px);
 }
 
 @media screen and (max-width: 1400px) {
@@ -987,12 +1004,16 @@ p {
   }
 
   .section-mobile {
-    padding-bottom: 250px;
-    padding-top: 250px;
+    padding-bottom: 150px;
+    padding-top: 80px;
     background: white;
     box-shadow: 0 -16px 128px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 11;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+
   }
 
   .section-mobile.first {
@@ -1050,5 +1071,30 @@ p {
   .scrollindicator-text.center {
     margin: auto;
     margin-top: 72px;
+  }
+
+  .m-overline {
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+    color: #bc2b2e;
+    font-weight: 900;
+    transition: opacity 1.25s 0.5s ease-out;
+    opacity: 1;
+    text-align: center;
+  }
+  
+  .m-heading {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: 900;
+    font-size: 3.6rem;
+    letter-spacing: 0.02rem;
+    margin-bottom: 3rem;
+    color: #bc2b2e;
+    text-rendering: geometricPrecision;
+    line-height: 1.15em;
+    text-align: center;
   }
 } 

@@ -12,9 +12,12 @@ const fsMenu1 = document.querySelector('.fs-menu.firstmenu');
 const fsMenu2 = document.querySelector('.fs-menu.secondmenu');
 const fsMenuM = document.querySelector('.fs-menu.mobile');
 const mobileView = document.querySelector('#mobile');
-const checkboxMobile = document.querySelector('.hamburgermenu.mobile > input')
-const anchorFirstSection = document.querySelector('#anchor-section-A')
-const davinciAnimation = document.querySelector('#davinci-animation')
+const checkboxMobile = document.querySelector('.hamburgermenu.mobile > input');
+const anchorFirstSection = document.querySelector('#anchor-section-A');
+const davinciAnimation = document.querySelector('#davinci-animation');
+const sectionHeading = document.querySelectorAll('.section-heading');
+const sectionOverline = document.querySelectorAll('.overline');
+const sectionCopy = document.querySelectorAll('.copy');
 
 let activeSection = ""
 
@@ -133,6 +136,46 @@ const sectionABreakpoint = 64;
 const sectionBBreakpoint = 128+(window.innerHeight);
 const sectionCBreakpoint = 172+(window.innerHeight*2);
 
+// Section heading transition
+function sectionHeadingTransition(inOrOut, sectionNumber) {
+  switch (inOrOut) {
+    case 'in':
+      sectionHeading[sectionNumber-1].classList.remove('heading-hidden');
+      break;
+    case 'out':
+      sectionHeading[sectionNumber-1].classList.add('heading-hidden');
+      break
+    default:
+      break;
+  }
+}
+// Section overline transition
+function sectionOverlineTransition(inOrOut, sectionNumber) {
+  switch (inOrOut) {
+    case 'in':
+      sectionOverline[sectionNumber-1].classList.remove('overline-hidden');
+      break;
+    case 'out':
+      sectionOverline[sectionNumber-1].classList.add('overline-hidden');
+      break;
+    default:
+      break;
+  }
+}
+
+// Section copy transition
+function sectionCopyTransition(inOrOut, sectionNumber) {
+  switch (inOrOut) {
+    case 'in':
+      sectionCopy[sectionNumber-1].classList.remove('hidden');
+      break;
+    case 'out':
+      sectionCopy[sectionNumber-1].classList.add('hidden');
+      break;
+    default:
+      break;
+  }
+}
 // Section transitions
 
 function showSections() {
@@ -145,12 +188,18 @@ function showSections() {
     heroSection.classList.add("hidden");
     navbar.classList.add("show-navbar");
     mapAnimation.play();
-    activeSection = "sectionA"
+    activeSection = "sectionA";
+    sectionHeadingTransition('in', 1);
+    sectionOverlineTransition('in', 1);
+    sectionCopyTransition('in', 1);
   } else {
     sectionA.classList.remove("visible-section");
     navbar.classList.remove("show-navbar")
     heroSection.classList.remove("hidden");
     mapAnimation.pause();
+    sectionHeadingTransition('out', 1);
+    sectionOverlineTransition('out', 1);
+    sectionCopyTransition('out', 1);
   }
   // Section B - We Are Marketers
   if (document.documentElement.scrollTop > sectionBBreakpoint) {
@@ -161,12 +210,18 @@ function showSections() {
     activeSection = "sectionB";
     davinciIn();
     clearInterval(hideDavinci);
+    sectionHeadingTransition('in', 2);
+    sectionOverlineTransition('in', 2);
+    sectionCopyTransition('in', 2);
   } else {
     document.getElementById('section-B').classList.remove('visible-section');
     sectionA.classList.remove('hidden');
     mapAnimation.play();
     davinciOut();
     clearInterval(showDavinci);
+    sectionHeadingTransition('out', 2);
+    sectionOverlineTransition('out', 2);
+    sectionCopyTransition('out', 2);
   }
   // Section C - We Are a Network
   if (document.documentElement.scrollTop > sectionCBreakpoint) {
@@ -174,11 +229,16 @@ function showSections() {
     mapAnimation.pause();
     davinciOut();
     document.getElementById('section-C').classList.add('visible-section');
-    activeSection = "sectionC"
+    activeSection = "sectionC";
+    sectionHeadingTransition('in', 3);
+    sectionOverlineTransition('in', 3);
+    sectionCopyTransition('in', 3);
   } else {
     document.getElementById('section-C').classList.remove('visible-section');
+    sectionHeadingTransition('out', 3);
+    sectionOverlineTransition('out', 3);
+    sectionCopyTransition('out', 3);
   }
-  console.log(`active section is ${activeSection}`);
 }
 
 function toggleMenu(checkbox) {
@@ -242,10 +302,27 @@ if (window.innerWidth < 768) {
   });
 }
 
-document.querySelector('button#testheading').addEventListener('click', function() {
-  if (document.querySelector('#test123').classList.contains('heading-hidden')) {
-    document.querySelector('#test123').classList.remove('heading-hidden');
-  } else {
-    document.querySelector('#test123').classList.add('heading-hidden');
-  }
-})
+// Pause on hover
+mapAnimation.addEventListener('mouseover', function() {
+  mapAnimation.pause();
+});
+
+mapAnimation.addEventListener('mouseout', function() {
+  mapAnimation.play();
+});
+
+mapAnimation.addEventListener('mousedown', function() {
+  mapAnimation.play();
+  console.log('test');
+});
+
+mapAnimation.addEventListener('mouseup', function() {
+  mapAnimation.pause();
+});
+// document.querySelector('button#testheading').addEventListener('click', function() {
+//   if (document.querySelector('#test123').classList.contains('heading-hidden')) {
+//     document.querySelector('#test123').classList.remove('heading-hidden');
+//   } else {
+//     document.querySelector('#test123').classList.add('heading-hidden');
+//   }
+// })

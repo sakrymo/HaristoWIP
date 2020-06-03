@@ -313,7 +313,6 @@ mapAnimation.addEventListener('mouseout', function() {
 
 mapAnimation.addEventListener('mousedown', function() {
   mapAnimation.play();
-  console.log('test');
 });
 
 mapAnimation.addEventListener('mouseup', function() {

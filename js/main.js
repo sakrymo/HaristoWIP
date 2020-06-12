@@ -98,37 +98,39 @@ function closeMenu() {
 // let showDavinci = showDavinci();
 // let hideDavinci = hideDavinci();
 
-function showDavinci() {
-  setInterval(() => {
-    if (davinciAnimation.currentTime > 5) {
-      davinciAnimation.pause();
-    }
-  }, 50);
-}
+// function showDavinci() {
+//   setInterval(() => {
+//     if (davinciAnimation.currentTime > 5) {
+//       davinciAnimation.pause();
+//       console.log('showDavinci called');
+//     }
+//   }, 50);
+// }
 
-function hideDavinci() {
-  setInterval(() => {
-    if (davinciAnimation.currentTime > 6) {
-      davinciAnimation.play();
-    }
-  }, 50);
-}
+// function hideDavinci() {
+//   setInterval(() => {
+//     if (davinciAnimation.currentTime > 6) {
+//       davinciAnimation.play();
+//       console.log('hideDavinci called');
+//     }
+//   }, 50);
+// }
 
-function davinciIn() {
-  if (davinciAnimation.currentTime > 6) {
-    davinciAnimation.currentTime = 0;
-    davinciAnimation.play();
-  }
-  showDavinci();
-}
+// function davinciIn() {
+//   if (davinciAnimation.currentTime > 6) {
+//     davinciAnimation.currentTime = 0;
+//     davinciAnimation.play();
+//   }
+//   showDavinci();
+// }
 
-function davinciOut() {
-  if (davinciAnimation.currentTime < 6) {
-    davinciAnimation.currentTime = 6.5;
-    davinciAnimation.play();
-  }
-  hideDavinci();
-}
+// function davinciOut() {
+//   if (davinciAnimation.currentTime < 6) {
+//     davinciAnimation.currentTime = 6.5;
+//     davinciAnimation.play();
+//   }
+//   hideDavinci();
+// }
 
 // Section Positions Y
 const sectionHeroBreakpoint = 0;
@@ -206,10 +208,13 @@ function showSections() {
     document.getElementById('section-B').classList.add('visible-section');
     sectionA.classList.add('hidden');
     mapAnimation.pause();
+    if (davinciAnimation.paused === true) {
+      setTimeout(() => {
+        davinciAnimation.currentTime = 0;
+      }, 450);
+    }
     davinciAnimation.play();
     activeSection = "sectionB";
-    davinciIn();
-    clearInterval(hideDavinci);
     sectionHeadingTransition('in', 2);
     sectionOverlineTransition('in', 2);
     sectionCopyTransition('in', 2);
@@ -217,8 +222,7 @@ function showSections() {
     document.getElementById('section-B').classList.remove('visible-section');
     sectionA.classList.remove('hidden');
     mapAnimation.play();
-    davinciOut();
-    clearInterval(showDavinci);
+    davinciAnimation.pause();
     sectionHeadingTransition('out', 2);
     sectionOverlineTransition('out', 2);
     sectionCopyTransition('out', 2);
@@ -227,7 +231,6 @@ function showSections() {
   if (document.documentElement.scrollTop > sectionCBreakpoint) {
     davinciAnimation.pause();
     mapAnimation.pause();
-    davinciOut();
     document.getElementById('section-C').classList.add('visible-section');
     activeSection = "sectionC";
     sectionHeadingTransition('in', 3);
@@ -240,7 +243,7 @@ function showSections() {
     sectionCopyTransition('out', 3);
   }
 }
-
+// Toggle menu on/off
 function toggleMenu(checkbox) {
   if (checkbox === checkboxLeft) {
     if (checkbox.checked === true && sectionA.classList.contains('visible-section') !== true) {
@@ -271,7 +274,7 @@ function toggleMenu(checkbox) {
     }
   }
 }
-
+// Toggle mobile menu on/off
 function toggleMenuMobile(checkbox) {
   if (checkbox.checked === true) {
     console.log('menu is now active the sign is X');

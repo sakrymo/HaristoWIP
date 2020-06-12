@@ -903,6 +903,10 @@ p {
 
 /* Mobile */
 @media only screen and (max-width: 768px) {
+  :root {
+    font-size: 52%;
+  }
+  
   #mobile {
     display: block;
     overflow-x: visible;
@@ -1137,5 +1141,12 @@ p {
     padding: 10vw;
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  .m-video {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    transform: scale(1.16);
   }
 } 

@@ -17,7 +17,6 @@ LOW PRIORITY
 [] Change scrolling mechanism - make onscroll run goToNextSection() which automatically runs the correct classes and checks if the sections arent currently scrolling
 [] Dark theme
 [] Language switch
-[] Try ruby on rails
 
 
 Current changes

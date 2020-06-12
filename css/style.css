@@ -110,6 +110,7 @@ p {
 
 #hero-animation {
   max-height: 100%;
+  min-height: 100%;
 }
 
 .hero-layout-container {
@@ -618,10 +619,7 @@ p {
   width: 100%;
   height: auto;
   margin-bottom: 40px;
-}
-
-#map-animation {
-  cursor: pointer;
+  pointer-events: none;
 }
 
 #davinci-animation {

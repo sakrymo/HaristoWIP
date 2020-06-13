@@ -909,8 +909,7 @@ p {
   
   #mobile {
     display: block;
-    overflow-x: visible;
-    /* CHANGE TO OVERFLOW HIDDEN WHEN READY */
+    overflow-x: hidden;
     opacity: 1;
     height: auto;
     width: auto;

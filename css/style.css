@@ -1025,7 +1025,8 @@ p {
     left: auto;
     top: 10%;
     right: 4%;
-    opacity: 1;
+    opacity: 0.75;
+    z-index: 3;
   }
 
   .hamburgermenu.mobile * {
@@ -1037,7 +1038,7 @@ p {
   }
 
   .section-mobile {
-    padding-bottom: 150px;
+    padding-bottom: 80px;
     padding-top: 80px;
     background: white;
     box-shadow: 0 -16px 128px rgba(0, 0, 0, 0.3);
@@ -1062,6 +1063,7 @@ p {
   .fs-menu.mobile.active-menu {
     opacity: 1;
     pointer-events: all;
+    z-index: 999;
   }
 
   .fs-menu-item:active {
@@ -1123,7 +1125,7 @@ p {
     font-weight: 900;
     font-size: 4.3rem;
     letter-spacing: 0.02rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 3.2rem;
     color: #bc2b2e;
     text-rendering: geometricPrecision;
     line-height: 1.15em;

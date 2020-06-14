@@ -18,6 +18,7 @@ const davinciAnimation = document.querySelector('#davinci-animation');
 const sectionHeading = document.querySelectorAll('.section-heading');
 const sectionOverline = document.querySelectorAll('.overline');
 const sectionCopy = document.querySelectorAll('.copy');
+const mobileMenu = document.querySelector('.hamburgermenu.mobile');
 
 let activeSection = ""
 
@@ -324,13 +325,16 @@ function mobileScrollToSection() {
 }
 
 // Hide mobile menu on scroll
-window.addEventListener('touchmove', hideMobileMenu());
+
 function hideMobileMenu() {
-  if (window.pageYOffset>0) {
-    document.querySelector('.hamburgermenu.mobile').classList.add('hidden');
-  }
+  if (window.pageYOffset > 0) {
+    mobileMenu.classList.add('hidden');
+  } else { mobileMenu.classList.remove('hidden'); }
 }
 
 if(window.innerHeight<660) {
   document.querySelector('.mobile-scrollindicator-container').style.display = "none";
 }
+
+window.addEventListener('touchmove', function() { hideMobileMenu(); });
+window.addEventListener('scroll', function() { hideMobileMenu(); });

@@ -1,7 +1,7 @@
 =begin
 
 HIGH PRIORITY
-[] move content to mobile website
+[x] move content to mobile website
 [x] make davinci section
 [] make the animation for partners members etc
 [] add a working contact form and redirect to main site as last section

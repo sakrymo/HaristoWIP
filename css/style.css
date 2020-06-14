@@ -910,6 +910,7 @@ p {
   #mobile {
     display: block;
     overflow-x: hidden;
+    overflow-y: scroll;
     opacity: 1;
     height: auto;
     width: auto;
@@ -929,6 +930,7 @@ p {
     background: linear-gradient(#ec2a2d, rgb(70, 0, 0));
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
   }
 
   #particles-js {
@@ -937,6 +939,8 @@ p {
     position: absolute;
     z-index: 1;
     top:0;
+    pointer-events: none;
+    overflow: hidden;
   }
 
   .mobile-H {
@@ -952,6 +956,7 @@ p {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
 
   .mobile-H-mid {
@@ -1027,6 +1032,13 @@ p {
     right: 4%;
     opacity: 0.75;
     z-index: 3;
+    pointer-events: all;
+    transition: opacity 0.5s ease;
+  }
+
+  .hamburgermenu.mobile.hidden {
+    opacity: 0;
+    pointer-events: none;
   }
 
   .hamburgermenu.mobile * {

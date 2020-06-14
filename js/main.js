@@ -304,3 +304,29 @@ if (window.innerWidth < 768) {
     console.log('callback - particles.js config loaded');
   });
 }
+
+// Mobile Scroll Indicator
+document.querySelector('.mobile-scrollindicator-wrapper').addEventListener('click', e => {
+  mobileScrollToSection();
+})
+
+// Mobile scroll anchor
+function mobileScrollToSection() {
+  let targetSection = e.currentTarget.attributes.goto.nodeValue;
+  switch (targetSection) {
+    case "m-sectionA":
+      document.querySelector('#m-who-we-are').scrollIntoView();
+      break;
+  
+    default:
+      break;
+  }
+}
+
+// Hide mobile menu on scroll
+window.addEventListener('touchmove', hideMobileMenu());
+function hideMobileMenu() {
+  if (window.pageYOffset>0) {
+    document.querySelector('.hamburgermenu.mobile').classList.add('hidden');
+  }
+}

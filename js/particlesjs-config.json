@@ -71,15 +71,15 @@
     "detect_on": "canvas",
     "events": {
       "ontap": {
-        "enable": true,
+        "enable": false,
         "mode": "grab"
       },
       "onclick": {
-        "enable": true,
+        "enable": false,
         "mode": "push"
       },
       "onhover": {
-        "enable": true,
+        "enable": false,
         "mode": "grab"
       },
       "resize": true

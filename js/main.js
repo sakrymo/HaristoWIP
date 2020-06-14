@@ -336,5 +336,5 @@ if(window.innerHeight<660) {
   document.querySelector('.mobile-scrollindicator-container').style.display = "none";
 }
 
-window.addEventListener('touchmove', function() { hideMobileMenu(); });
-window.addEventListener('scroll', function() { hideMobileMenu(); });
+mobileMenu.addEventListener('touchmove', hideMobileMenu);
+mobileMenu.addEventListener('scroll', hideMobileMenu);

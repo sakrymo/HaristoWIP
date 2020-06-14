@@ -330,3 +330,7 @@ function hideMobileMenu() {
     document.querySelector('.hamburgermenu.mobile').classList.add('hidden');
   }
 }
+
+if(window.innerHeight<660) {
+  document.querySelector('.mobile-scrollindicator-container').style.display = "none";
+}

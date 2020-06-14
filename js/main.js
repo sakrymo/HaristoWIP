@@ -326,15 +326,20 @@ function mobileScrollToSection() {
 
 // Hide mobile menu on scroll
 
-function hideMobileMenu() {
+function hideMobileMenu(e) {
   if (window.pageYOffset > 0) {
-    mobileMenu.classList.add('hidden');
-  } else { mobileMenu.classList.remove('hidden'); }
+    e.currentTarget.classList.add('hidden');
+  } else { e.currentTarget.classList.remove('hidden'); }
 }
 
 if(window.innerHeight<660) {
   document.querySelector('.mobile-scrollindicator-container').style.display = "none";
 }
 
-mobileMenu.addEventListener('touchmove', hideMobileMenu);
-mobileMenu.addEventListener('scroll', hideMobileMenu);
+mobileMenu.addEventListener('touchmove', e => {
+  hideMobileMenu(e);
+});
+
+mobileMenu.addEventListener('scroll', e => {
+  hideMobileMenu(e);
+});

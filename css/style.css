@@ -901,6 +901,33 @@ p {
   transform: translateY(0);
 }
 
+.two-columns.a-height {
+  height: auto;
+  background: transparent;
+}
+
+.roles-container {
+  background: transparent;
+  height: auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 3fr;
+  grid-template-rows: 1fr;
+  gap: 10px 20px;
+  grid-template-areas: ". . . ." ". . . ." ". . . .";
+}
+
+#member-banner, #partner-banner {
+  margin: 0 auto 0 auto;
+}
+
+.roles-container .copy {
+  margin: 0;
+  padding: 0;
+}
+
 /* Mobile */
 @media only screen and (max-width: 768px) {
   :root {
@@ -1161,5 +1188,13 @@ p {
     margin: 0;
     width: 100%;
     transform: scale(1.16);
+  }
+
+  .socialmediaicons.mobile {
+    flex-flow: row;
+  }
+
+  .socialmediaicons.mobile * {
+    margin: 0 5px 0 5px;
   }
 } 

@@ -1192,12 +1192,11 @@ p {
 
   .socialmediaicons.mobile {
     flex-flow: row;
-    margin-top: 20px;
+    margin-top: 40px;
   }
 
   .socialmediaicons.mobile * {
     margin: 0 5px 0 5px;
-    margin-top: -25px;
     margin-bottom: 0;
     padding: 0;
   }

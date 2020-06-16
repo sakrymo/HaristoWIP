@@ -1192,6 +1192,7 @@ p {
 
   .socialmediaicons.mobile {
     flex-flow: row;
+    margin-top: 20px;
   }
 
   .socialmediaicons.mobile * {

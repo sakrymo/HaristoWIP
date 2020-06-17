@@ -932,6 +932,11 @@ p {
   padding: 0;
 }
 
+.roles-container .copy.hidden {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
 /* Section D - We Are Waiting For You */
 
 #section-D {

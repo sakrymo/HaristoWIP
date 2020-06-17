@@ -499,7 +499,7 @@ p {
 /* Space */
 
 .whitespace {
-  height: 4000px;
+  height: 6000px;
   position: relative;
   z-index: 0;
   pointer-events: none;
@@ -661,6 +661,10 @@ p {
   margin-left: auto;
 }
 
+.textbox.center {
+  margin: auto;
+  text-align: center;
+}
 .overline {
   font-family: brandon-grotesque, sans-serif;
   font-size: 1.6rem;
@@ -926,6 +930,26 @@ p {
 .roles-container .copy {
   margin: 0;
   padding: 0;
+}
+
+/* Section D - We Are Waiting For You */
+
+#section-D {
+  height: 100vh;
+  width: 100%;
+  background: white;
+  position: fixed;
+  z-index: 102;
+  top: 0px;
+  opacity: 1;
+  transform: translateY(100vh);
+  transition: transform 1.2s ease, opacity 1s ease;
+  box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.15);
+  margin-top: 96px;
+}
+
+#section-D.visible-section {
+  transform: translateY(0);
 }
 
 /* Mobile */

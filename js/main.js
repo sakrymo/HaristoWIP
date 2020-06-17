@@ -23,7 +23,7 @@ const mobileMenu = document.querySelector('.hamburgermenu.mobile');
 let activeSection = ""
 
 window.onscroll = function () {
-  showSections()
+  hideMobileMenu();
 };
 
 window.addEventListener('load', function() {
@@ -138,6 +138,7 @@ const sectionHeroBreakpoint = 0;
 const sectionABreakpoint = 64;
 const sectionBBreakpoint = 128+(window.innerHeight);
 const sectionCBreakpoint = 172+(window.innerHeight*2);
+const sectionDBreakpoint = 216+(window.innerHeight*3);
 
 // Section heading transition
 function sectionHeadingTransition(inOrOut, sectionNumber) {
@@ -243,6 +244,21 @@ function showSections() {
     sectionOverlineTransition('out', 3);
     sectionCopyTransition('out', 3);
   }
+  // Section D - We Are Waiting For You
+  if (document.documentElement.scrollTop > sectionDBreakpoint) {
+    davinciAnimation.pause();
+    mapAnimation.pause();
+    document.getElementById('section-D').classList.add('visible-section');
+    activeSection = "sectionD";
+    sectionHeadingTransition('in', 4);
+    sectionOverlineTransition('in', 4);
+    sectionCopyTransition('in', 4);
+  } else {
+    document.getElementById('section-D').classList.remove('visible-section');
+    sectionHeadingTransition('out', 4);
+    sectionOverlineTransition('out', 4);
+    sectionCopyTransition('out', 4);
+  }
 }
 // Toggle menu on/off
 function toggleMenu(checkbox) {
@@ -326,20 +342,12 @@ function mobileScrollToSection() {
 
 // Hide mobile menu on scroll
 
-function hideMobileMenu(e) {
-  if (window.pageYOffset > 0) {
-    e.currentTarget.classList.add('hidden');
-  } else { e.currentTarget.classList.remove('hidden'); }
+window.ontouchmove = function() {
+  hideMobileMenu();
 }
 
-if(window.innerHeight<660) {
-  document.querySelector('.mobile-scrollindicator-container').style.display = "none";
+function hideMobileMenu() {
+  if (document.documentElement.scrollTop > 40) {
+    mobileMenu.classList.add('hidden');
+  } else { mobileMenu.classList.remove('hidden');}
 }
-
-mobileMenu.addEventListener('touchmove', e => {
-  hideMobileMenu(e);
-});
-
-mobileMenu.addEventListener('scroll', e => {
-  hideMobileMenu(e);
-});

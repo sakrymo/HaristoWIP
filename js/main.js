@@ -23,7 +23,7 @@ const mobileMenu = document.querySelector('.hamburgermenu.mobile');
 let activeSection = ""
 
 window.onscroll = function () {
-  hideMobileMenu();
+  showSections()
 };
 
 window.addEventListener('load', function() {

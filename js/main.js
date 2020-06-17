@@ -23,7 +23,7 @@ const mobileMenu = document.querySelector('.hamburgermenu.mobile');
 let activeSection = ""
 
 window.onscroll = function () {
-  showSections()
+  showSections();
 };
 
 window.addEventListener('load', function() {
@@ -338,4 +338,16 @@ function mobileScrollToSection() {
     default:
       break;
   }
+}
+
+// Hide mobile menu on scroll
+
+window.ontouchmove = function() {
+  hideMobileMenu();
+}
+
+function hideMobileMenu() {
+  if (document.documentElement.scrollTop > 40) {
+    mobileMenu.classList.add('hidden');
+  } else { mobileMenu.classList.remove('hidden');}
 }

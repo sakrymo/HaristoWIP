@@ -252,12 +252,12 @@ function showSections() {
     activeSection = "sectionD";
     sectionHeadingTransition('in', 4);
     sectionOverlineTransition('in', 4);
-    sectionCopyTransition('in', 4);
+    sectionCopyTransition('in', 5);
   } else {
     document.getElementById('section-D').classList.remove('visible-section');
     sectionHeadingTransition('out', 4);
     sectionOverlineTransition('out', 4);
-    sectionCopyTransition('out', 4);
+    sectionCopyTransition('out', 5);
   }
 }
 // Toggle menu on/off

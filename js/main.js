@@ -339,15 +339,3 @@ function mobileScrollToSection() {
       break;
   }
 }
-
-// Hide mobile menu on scroll
-
-window.ontouchmove = function() {
-  hideMobileMenu();
-}
-
-function hideMobileMenu() {
-  if (document.documentElement.scrollTop > 40) {
-    mobileMenu.classList.add('hidden');
-  } else { mobileMenu.classList.remove('hidden');}
-}

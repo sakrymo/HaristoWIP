@@ -22,10 +22,12 @@ const mobileMenu = document.querySelector('.hamburgermenu.mobile');
 
 let activeSection = ""
 
+// Section Transition
 window.onscroll = function () {
   showSections();
 };
 
+// Preloader
 window.addEventListener('load', function() {
   videoBackground.play();
   preloader.classList.add("page-loaded");
@@ -95,44 +97,6 @@ function closeMenu() {
   fsMenu2.classList.remove('active-menu');
 }
 
-// Davinci show & hide
-// let showDavinci = showDavinci();
-// let hideDavinci = hideDavinci();
-
-// function showDavinci() {
-//   setInterval(() => {
-//     if (davinciAnimation.currentTime > 5) {
-//       davinciAnimation.pause();
-//       console.log('showDavinci called');
-//     }
-//   }, 50);
-// }
-
-// function hideDavinci() {
-//   setInterval(() => {
-//     if (davinciAnimation.currentTime > 6) {
-//       davinciAnimation.play();
-//       console.log('hideDavinci called');
-//     }
-//   }, 50);
-// }
-
-// function davinciIn() {
-//   if (davinciAnimation.currentTime > 6) {
-//     davinciAnimation.currentTime = 0;
-//     davinciAnimation.play();
-//   }
-//   showDavinci();
-// }
-
-// function davinciOut() {
-//   if (davinciAnimation.currentTime < 6) {
-//     davinciAnimation.currentTime = 6.5;
-//     davinciAnimation.play();
-//   }
-//   hideDavinci();
-// }
-
 // Section Positions Y
 const sectionHeroBreakpoint = 0;
 const sectionABreakpoint = 64;
@@ -180,8 +144,8 @@ function sectionCopyTransition(inOrOut, sectionNumber) {
       break;
   }
 }
-// Section transitions
 
+// Section transitions
 function showSections() {
   if (document.documentElement.scrollTop < sectionABreakpoint) {
     activeSection = "sectionHero"

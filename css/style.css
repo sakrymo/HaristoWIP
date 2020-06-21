@@ -664,18 +664,24 @@ p {
 .textbox.center {
   margin: auto;
   text-align: center;
+  width: 1200px;
 }
+
 .overline {
   font-family: brandon-grotesque, sans-serif;
   font-size: 1.6rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-top: 15vh;
+  margin-top: 12vh;
   margin-bottom: 0.5rem;
   color: #bc2b2e;
   font-weight: 900;
   transition: opacity 1.25s 0.5s ease-out;
   opacity: 1;
+}
+
+.overline.first {
+  margin-top: 15vh;
 }
 
 .overline.overline-hidden {
@@ -811,25 +817,6 @@ p {
   align-items: center;
 }
 
-.play-cursor-hover {
-  background: url('../img/cursorPlayHover.svg') center center/cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  margin: auto;
-  transition: clip-path 1s ease;
-  clip-path: inset(0);
-}
-
-.play-cursor-active {
-  background: url('../img/cursorPlayActive.png') center center/cover;
-  width: 50%;
-  height: 50%;
-  position: absolute;
-  transition: transform 0.5s ease;
-  transform: scale(0);
-}
-
 /* Other */
 .offset {
   height: 10vh;
@@ -955,6 +942,56 @@ p {
 
 #section-D.visible-section {
   transform: translateY(0);
+}
+
+.contact-grid {
+  margin: auto;
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-grid-inner {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+#mosaic-bottom {
+  position: absolute;
+  bottom: 7rem;
+  width: calc(100% + 200px);
+  height: auto;
+  pointer-events: none;
+  animation: 30s both infinite mosaicBottom;
+}
+
+@keyframes mosaicBottom {
+  0% { transform: translateX(0px); }
+  50% { transform: translateX(-200px); }
+  100% { transform: translateX(0px); }
+}
+/* Text */
+
+.bold {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.copy.important {
+  font-size: 1.6em;
+}
+
+.bold.important {
+  font-size: 1.4em;
+}
+
+.red {
+  color: #bc2b2e;
+}
+
+.underlined {
+  box-shadow: #fff 0px 4px 0px,#bc2b2e 0px 7px 0px;
 }
 
 /* Mobile */

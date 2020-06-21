@@ -292,8 +292,15 @@ document.querySelector('.mobile-scrollindicator-wrapper').addEventListener('clic
 })
 
 // Mobile scroll anchor
+document.querySelectorAll('.m-section-anchor').forEach(item => {
+  item.addEventListener('click', e => {
+    mobileScrollToSection(e);
+  })
+})
+
 function mobileScrollToSection() {
   let targetSection = e.currentTarget.attributes.goto.nodeValue;
+  
   switch (targetSection) {
     case "m-sectionA":
       document.querySelector('#m-who-we-are').scrollIntoView();

@@ -294,13 +294,20 @@ document.querySelector('.mobile-scrollindicator-wrapper').addEventListener('clic
 // Mobile scroll anchor
 document.querySelectorAll('.m-section-anchor').forEach(item => {
   item.addEventListener('click', e => {
+    closeMobileMenu();
     mobileScrollToSection(e);
+    console.log(e);
   })
 })
 
+function closeMobileMenu() {
+  fsMenuM.classList.remove('active-menu');
+  document.getElementsByTagName('body').style.overflow = "visible";
+}
+
 function mobileScrollToSection() {
   let targetSection = e.currentTarget.attributes.goto.nodeValue;
-  
+
   switch (targetSection) {
     case "m-sectionA":
       document.querySelector('#m-who-we-are').scrollIntoView();

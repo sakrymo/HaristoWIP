@@ -952,25 +952,35 @@ p {
   align-items: center;
 }
 
+.contact-grid.mobile {
+  flex-flow: column;
+  text-align: center;
+  font-size: 1.8rem !important;
+}
+
 .contact-grid-inner {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
 }
 
-#mosaic-bottom {
+.mosaic-bottom {
   position: absolute;
   bottom: 7rem;
   width: calc(100% + 200px);
   height: auto;
   pointer-events: none;
-  animation: 30s both infinite mosaicBottom;
 }
 
-@keyframes mosaicBottom {
-  0% { transform: translateX(0px); }
-  50% { transform: translateX(-200px); }
-  100% { transform: translateX(0px); }
+.mosaic-bottom.mobile {
+  position: absolute;
+  left: 0;
+  bottom: 0 !important;
 }
+
+.mobile-text {
+  font-size: 1.6rem !important;
+}
+
 /* Text */
 
 .bold {
@@ -992,6 +1002,10 @@ p {
 
 .underlined {
   box-shadow: #fff 0px 4px 0px,#bc2b2e 0px 7px 0px;
+}
+
+#m-contact-us .m-copy > .contact-grid {
+  margin-top: -10px;
 }
 
 /* Mobile */
@@ -1265,5 +1279,26 @@ p {
     margin: 0 5px 0 5px;
     margin-bottom: 0;
     padding: 0;
+  }
+
+  .roles-container.mobile {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+  }
+
+  .roles-container.mobile #member-banner,
+  .roles-container.mobile #partner-banner {
+    margin-bottom: 1rem;
+  }
+
+  #member-txt.m-copy,
+  #partner-txt.m-copy {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  #m-what-we-do .m-heading {
+    margin-bottom: 6rem;
   }
 } 

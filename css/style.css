@@ -981,7 +981,7 @@ h1,h2,h3,h4,p {
 .mosaic-bottom {
   position: absolute;
   bottom: 7rem;
-  width: calc(100% + 200px);
+  width: calc(100% + 10px); 
   height: auto;
   pointer-events: none;
 }

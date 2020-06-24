@@ -39,11 +39,7 @@ a {
   box-sizing: border-box;
 }
 
-h1,
-h2,
-h3,
-h4,
-p {
+h1,h2,h3,h4,p {
   margin: 0;
 }
 
@@ -471,6 +467,25 @@ p {
   justify-content: center;
   align-items: center;
   margin-top: 80px;
+}
+
+.socialmediaicons.menu {
+  flex-flow: row !important;
+}
+
+.socialmediaicons.menu.left {
+  justify-content: left;
+  margin-left: -1.4rem;
+}
+
+.socialmediaicons.menu.right {
+  justify-content: flex-end;
+  margin-right: -1.4rem;
+  text-align: left;
+}
+
+.socialmediaicons.menu .social_icon {
+  margin: 1.4rem;
 }
 
 @keyframes socialmediaicons {
@@ -1002,10 +1017,24 @@ p {
 
 .underlined {
   box-shadow: #fff 0px 4px 0px,#bc2b2e 0px 7px 0px;
+  transition: box-shadow 0.5s;
+}
+
+.underlined:hover {
+  box-shadow: #fff 0px 4px 0px,#bc2b2e 0px 12px 0px;
 }
 
 #m-contact-us .m-copy > .contact-grid {
   margin-top: -10px;
+}
+
+.email {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.email:hover {
+  color: #bc2b2e;
+  text-shadow: #bc2b2e 0px 0px 1px;
 }
 
 /* Mobile */
@@ -1059,11 +1088,11 @@ p {
     position: absolute;
     top:0;
     z-index: 2;
-    pointer-events: none;
     flex-flow: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    pointer-events: none;
   }
 
   .mobile-H-mid {
@@ -1085,6 +1114,7 @@ p {
 
   .mobile-H-bot {
     border-radius: 18.618% 18.618% 0 0;
+    pointer-events: all !important;
   }
 
   #SVGTitleStroke {
@@ -1185,6 +1215,10 @@ p {
     z-index: 999;
   }
 
+  .fs-menu-item {
+    margin-top: 0.618em;
+    margin-bottom: 0.618em;
+  }
   .fs-menu-item:active {
     color: white;
     opacity: 1;
@@ -1302,3 +1336,9 @@ p {
     margin-bottom: 6rem;
   }
 } 
+
+@media only screen and (max-height:640px) {
+  .mobile-scrollindicator-container {
+    display: none;
+  }
+}
